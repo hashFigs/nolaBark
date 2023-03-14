@@ -9,6 +9,8 @@
     "@sendgrid/mail": "^7.7.0",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
+    "md5": "^2.3.0",
+    "mongodb": "^5.1.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
