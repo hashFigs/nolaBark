@@ -10,10 +10,7 @@ export default async function handler(req, res) {
     const db = client.db("test");
 
     switch (method) {
-        case "GET":
-          const allUsers = await db.collection("users").find({}).toArray();
-          res.status(200).json(allUsers);
-          break;
+        
         case "POST": //User Register
           const { email, password } = req.body;
                    
@@ -41,7 +38,7 @@ export default async function handler(req, res) {
           
           break;
         default:
-          res.setHeader("Allow", ["GET", "POST", "PUT", "DELETE"]);
+          res.setHeader("Allow", ["POST"]);
           res.status(405).end(`Method ${method} Not Allowed`);
           break;
       }

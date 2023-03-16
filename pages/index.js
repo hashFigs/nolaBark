@@ -8,6 +8,7 @@ import Image from 'next/image';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+
   return {
     props: {
       allPostsData,
@@ -22,11 +23,6 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      
-      
-
-
-    
   
       <Image
         priority
@@ -37,10 +33,7 @@ export default function Home({ allPostsData }) {
         alt=""
       />
       <h1 className={utilStyles.heading2Xl}>{"jordi"}</h1>
-  
-      
-      
-      
+   
       
       <section className={utilStyles.headingMd}>
         <p>hi my name is jooo</p>
