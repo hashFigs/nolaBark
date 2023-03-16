@@ -4,6 +4,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Navbar from './nav';
+import Footer from './footer';
 
 const name = 'Jordi figue';
 export const siteTitle = 'personal portafolio';
@@ -40,6 +41,7 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
+    <Footer></Footer>
     </>
   );
 }
