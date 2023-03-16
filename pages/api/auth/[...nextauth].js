@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth'
-import CredentialsProvider from "next-auth/providers/credentials";
 
+import CredentialsProvider from 'next-auth/providers/credentials'
 
 export default NextAuth({
   providers: [
@@ -16,19 +16,46 @@ export default NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
+        console.log("Holaaaa")
+        return(true)
         // Add logic here to look up the user from the credentials supplied
-        const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
-  
-        if (user) {
-          // Any object returned will be saved in `user` property of the JWT
-          return user
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null
-  
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
-        }
+        
+        //busco a la db i retorno user
+        
+      /*             
+        let user = await db.collection("users").findOne(
+            { email: credentials.username,
+              password: md5(credentials.password)  
+             },
+            );
+        
+        if (!user) throw (res.status(405).json({
+            Status: "OK",
+            ErrorCode: "02",
+            Description:"invalid email / password"
+             
+        }));
+        else {
+         
+            var token = jwt.sign({ userId: user._id.toString(), expiresAt: new Date(+new Date() + 7 * 24 * 60 * 60 * 1000) }, process.env.TOKEN_SECRET);
+            
+            var session = await db.collection("session").insertOne({
+                token: token, 
+                expiresAt: new Date(+new Date() + 7 * 24 * 60 * 60 * 1000),
+                userId: user._id  
+       })
+    }    
+    res.status(200).json({
+        Status: "OK",
+        token: token,
+        userId: user._id,
+        
+    });   
+*/
+
       }
     })
   ]
+  
+ 
 })
