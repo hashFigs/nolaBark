@@ -74,7 +74,7 @@ return(
   <form onSubmit={handleSubmit}>
             <button
               type="submit"
-              onclick={handleSubmit}
+              onClick={handleSubmit}
               className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
             >
               {logintext}

@@ -1,5 +1,7 @@
 import NextAuth from 'next-auth'
-
+import md5 from "md5";
+import jwt from "jsonwebtoken"
+import clientPromise from "../../../lib/mongodb";
 import CredentialsProvider from 'next-auth/providers/credentials'
 
 export default NextAuth({
@@ -15,47 +17,23 @@ export default NextAuth({
         username: { label: "Username", type: "text", placeholder: "jsmith" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials, req) {
-        console.log("Holaaaa")
-        return(true)
-        // Add logic here to look up the user from the credentials supplied
-        
-        //busco a la db i retorno user
-        
-      /*             
-        let user = await db.collection("users").findOne(
-            { email: credentials.username,
-              password: md5(credentials.password)  
-             },
-            );
-        
-        if (!user) throw (res.status(405).json({
-            Status: "OK",
-            ErrorCode: "02",
-            Description:"invalid email / password"
+      async authorize(credentials, req, res) {
+        const client = await clientPromise;
+        const db = client.db("test");
              
-        }));
-        else {
-         
-            var token = jwt.sign({ userId: user._id.toString(), expiresAt: new Date(+new Date() + 7 * 24 * 60 * 60 * 1000) }, process.env.TOKEN_SECRET);
-            
-            var session = await db.collection("session").insertOne({
-                token: token, 
-                expiresAt: new Date(+new Date() + 7 * 24 * 60 * 60 * 1000),
-                userId: user._id  
-       })
-    }    
-    res.status(200).json({
-        Status: "OK",
-        token: token,
-        userId: user._id,
-        
-    });   
-*/
+      let user = await db.collection("users").findOne(
+          { email: credentials.username,
+            password: md5(credentials.password)  
+            },
+          );
+                
+          return(!user ? false : true)
+               
 
       }
     })
-  ]
+  ],
+
   
  
 })
