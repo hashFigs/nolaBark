@@ -30,7 +30,7 @@ useEffect(() => {
     }else{
         setLogintext('logIn')
     }
-})
+}, [session])
 
 return(
     <>
@@ -49,18 +49,18 @@ return(
   >
     Home
   </Link>
-  <a
-    href="#"
+  <Link
+    href="/about"
     className="hidden lg:block font-light text-base text-gray-600 dark:text-gray-50"
   >
     About
-  </a>
-  <a
-    href="#"
+  </Link>
+  <Link
+    href="/blog"
     className="hidden lg:block font-light text-base text-gray-600 dark:text-gray-50"
   >
     Blog
-  </a>
+  </Link>
   <Link
     href="/contact"
     className="hidden lg:block font-light text-base text-gray-600 dark:text-gray-50"
