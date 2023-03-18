@@ -40,6 +40,7 @@ export default async function handler(req, res) {
             Status: "OK",
             token: token,
             userId: user._id,
+            email: user.email 
             
         });   
           
