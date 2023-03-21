@@ -19,7 +19,9 @@ export default function Login({ allPostsData }) {
              },
         });
 		const data = await res.json();
-		console.log(data);
+		console.log("DAta!!", data);
+    
+
 	} catch (err) {
 		console.log(err);
 	}
@@ -77,9 +79,7 @@ export default function Login({ allPostsData }) {
               Log In
             </button>
             </div>
- 
-
-         
+          
           </form>
       </Layout>  
     )}
