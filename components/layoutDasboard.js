@@ -7,7 +7,7 @@ export default function LayoutDashboard({ children, home }) {
     <>
     <SideNavbar></SideNavbar>
 
-    <div class="p-4 sm:ml-64">
+    <div className="p-4 sm:ml-64">
         {children}
     </div>
 

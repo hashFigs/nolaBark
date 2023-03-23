@@ -3,32 +3,21 @@ import Layout from "../components/layout"
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 
-export default function Login({ allPostsData }) {
+export default function Signup() {
    const [username, setUsername]= useState('');
    const [password, setPassword]= useState('');
+   const [rePassword, setRePassword]= useState('');
     
    const router = useRouter();
    const handleSubmit = async (e) => {
     
     e.preventDefault();
     
-    const result = await signIn("credentials", {
-      username:username, 
-      password: password,
-      redirect:false,
-    
-    });
-    
-    if (result?.error) {
-     console.log("ERROR", result)
-     
-    } else {
-      router.push("/dashboard");
-    }
-/*
+   
+
 
     try {
-		const res = await fetch("api/users/login", {
+		const res = await fetch("api/users/register", {
             method: "POST",
             body: JSON.stringify({email:username, password: password}),
             headers: {
@@ -40,16 +29,16 @@ export default function Login({ allPostsData }) {
     
     if (res?.error) {
       console.log("ERROR")
-      router.push("/api/auth/signin");
+      router.push("/signup");
      } else {
-       router.push("/dashboard");
+       router.push("/login");
      }
 
 	} catch (err) {
 		console.log(err);
 	}
-  */
-
+  
+  
    }
 
     return (
@@ -60,7 +49,7 @@ export default function Login({ allPostsData }) {
           className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
         >
          
-         <h1> Log In </h1> 
+         <h1> Sign Up </h1> 
           <label
             htmlFor="fullname"
             className="text-gray-500 font-light mt-8 dark:text-gray-50"
@@ -82,7 +71,7 @@ export default function Login({ allPostsData }) {
             htmlFor="password"
             className="text-gray-500 font-light mt-8 dark:text-gray-50"
           >
-            password<span className="text-red-500 dark:text-gray-50">*</span>
+            Password<span className="text-red-500 dark:text-gray-50">*</span>
           </label>
           
           <input
@@ -94,14 +83,30 @@ export default function Login({ allPostsData }) {
             name="password"
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
           />
-
+          
+          <label
+            htmlFor="password"
+            className="text-gray-500 font-light mt-8 dark:text-gray-50"
+          >
+            Re-password<span className="text-red-500 dark:text-gray-50">*</span>
+          </label>
+          
+          <input
+            type="text"
+            value={rePassword}
+            onChange={(e) => {
+              setRePassword(e.target.value);
+            }}
+            name="Re-password"
+            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+          />
 
           <div className="flex flex-row items-center justify-start">
             <button
               type="submit"
               className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
             >
-              Log In
+              Register
             </button>
             </div>
           

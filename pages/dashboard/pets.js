@@ -2,19 +2,40 @@
 import { useState } from "react";
 import Modal from 'react-modal'
 import LayoutDashboard from "../../components/layoutDasboard"
+import {  useSession } from "next-auth/react"
+import { userAgent } from "next/server";
 
 
-export default function pets () {
+export default function Pets() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [petName, setPetName] = useState('');
     const [petSize, setPetSize] = useState('')
 
+    const { data: session } = useSession()
+    const user = session?.user;
+    const user_final = user?.user;
+  console.log("USERR", user_final?.userId)
+
+  /*
+  useEffect(() => {
+    setLoading(true)
+    fetch('/api/pets/getpets')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setLoading(false)
+      })
+  }, [])
+
+*/
+
+
 const savePet = async (e) => {
   try {
 		const res = await fetch("/api/pets/addpet", {
             method: "POST",
-            body: JSON.stringify({name:petName, size: petSize}),
+            body: JSON.stringify({name:petName, size: petSize, userId: user_final?.userId}),
             headers: {
                 "Content-Type": "application/json",
                 // token saved in db
@@ -67,6 +88,12 @@ return(
                 </button>
             
         </div>
+
+       
+        <p> {`email: ${user_final?.email}`}</p>
+        <p> {`userId: ${user_final?.userId}`}</p>
+        <p> {`token: ${user_final?.token}`}</p>
+      
     </div>    
 
     <div>
