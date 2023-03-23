@@ -17,8 +17,7 @@ export default NextAuth({
       async authorize(credentials, req) {
         
         const {username, password} = credentials;
-        console.log("username", username);
-        console.log("password", password);
+
         const md5p= md5(password)
         const res = await fetch("http://localhost:3000/api/users/login", {
           method: "POST",
@@ -33,28 +32,25 @@ export default NextAuth({
 
         const user = await res.json();
 
-        console.log("resss", user.email) 
-        if(user.email){
-          console.log("tonotttoo")
-        }
-        
-         return( user.email ? true : null)
-      /*
-      const client = await clientPromise;
-      const db = client.db("test");
-             
-      let user = await db.collection("users").findOne(
-          { email: credentials.username,
-            password: md5(credentials.password)  
-            },
-          );
-                
-          return(!user ? null : user)
-               
-*/
+        if(res.ok) return {user} 
+        return null
+        
       }
     })
   ],
+  pages:{
+    SignIn: "/login"
+  },
+  callbacks: {
+    jwt: async ({ token, user }) => {
+        user && (token.user = user)
+        return token
+    },
+    session: async ({ session, token }) => {
+        session.user = token.user
+        return session
+    }
+}
 
   
  

@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
     if(session){
         signOut();
     }else{
-        router.push('/api/auth/signin')
+        router.push('/login')
     }
 
 }

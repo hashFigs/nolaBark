@@ -20,9 +20,11 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   const { data: session } = useSession()
-  
+  const user = session?.user;
+  console.log(session)
   
     if (session) {
+    
       return(
       <Layout home>
       <Head>
@@ -30,7 +32,7 @@ export default function Home({ allPostsData }) {
       </Head>
       
       <h1>user authenticated</h1>
-      
+      <h1>{user.email}</h1>  
       <Image
         priority
         src="/images/profile.jpg"
@@ -42,10 +44,7 @@ export default function Home({ allPostsData }) {
       <h1 className={utilStyles.heading2Xl}>{"jordi"}</h1>
    
       
-      <section className={utilStyles.headingMd}>
-        <p>hi my name is jooo</p>
-       
-      </section>
+  
 
       {/* Add this <section> tag below the existing <section> tag */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
