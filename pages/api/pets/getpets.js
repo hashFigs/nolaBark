@@ -15,17 +15,20 @@ export default async function handler(req, res) {
             
            // const { name, breathe } = req.body;
             
-            console.log("userId", req.body);
+            console.log("HEaders", req.headers);
             
-            let pet = await db.collection("pets").find({
-      })
+            let pet = await db.collection("pets").findOne({
+                userId: "641bd832abff3bf1fc454cf7"
+           })
 
-            
-        res.status(200).json(pet);   
+        res.status(200).json([
+            { _id:123, name: "Fido", size: "small", breathe: "air", _userId: "641bd832abff3bf1fc454cf7"},
+            { _id:12333, name: "Fi434do", size: "small", breathe: "air", _userId: "641bd832abff3bf1fc454cf7"}
+        ]);   
           
          break;
         default:
-          res.setHeader("Allow", ["POST"]);
+          res.setHeader("Allow", ["GET"]);
           res.status(405).end(`Method ${method} Not Allowed`);
           break;
       }

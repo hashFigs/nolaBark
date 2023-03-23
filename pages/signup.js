@@ -13,8 +13,6 @@ export default function Signup() {
     
     e.preventDefault();
     
-   
-
 
     try {
 		const res = await fetch("api/users/register", {

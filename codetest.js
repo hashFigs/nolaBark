@@ -15,8 +15,6 @@ N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
 */
 
-
-
 function minPossit(arr) {
     for(var i = 1;  i< arr.length+1; i++) {
         if(arr.includes(i)){
