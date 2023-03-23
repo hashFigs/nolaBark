@@ -1,35 +1,47 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from 'react-modal'
 import LayoutDashboard from "../../components/layoutDasboard"
 import {  useSession } from "next-auth/react"
-import { userAgent } from "next/server";
 
+import PetsList from "../../components/pets/petsList"
 
 export default function Pets() {
 
     const [isOpen, setIsOpen] = useState(false)
     const [petName, setPetName] = useState('');
-    const [petSize, setPetSize] = useState('')
+    const [petSize, setPetSize] = useState('');
+    const [pets, setPets] = useState('');
 
     const { data: session } = useSession()
     const user = session?.user;
     const user_final = user?.user;
   console.log("USERR", user_final?.userId)
 
-  /*
+  
   useEffect(() => {
-    setLoading(true)
-    fetch('/api/pets/getpets')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data)
-        setLoading(false)
-      })
+    
+    const fetchUserPets =async () => {
+      const res = await fetch("/api/pets/getpets", {
+        method: "GET",
+        headers: {
+             "Content-Type": "application/json",
+
+             },
+            });
+      const data = await res.json();     
+      console.log("PET:", data)
+      setPets(data);
+
+    }
+    
+    fetchUserPets()
+    .catch(console.error)
+
   }, [])
 
-*/
 
+  
 
 const savePet = async (e) => {
   try {
@@ -38,8 +50,7 @@ const savePet = async (e) => {
             body: JSON.stringify({name:petName, size: petSize, userId: user_final?.userId}),
             headers: {
                 "Content-Type": "application/json",
-                // token saved in db
-                // userId  
+                
              },
         });
 		const data = await res.json();
@@ -51,9 +62,7 @@ const savePet = async (e) => {
 }
 
 
-const handleSubmit = (e) => {
-    setShowModal(true);
-}    
+
 
 const customStyles = {
     overlay: {
@@ -69,10 +78,15 @@ const customStyles = {
     }
  }
 
-return(
+
+
+if(!pets) {
+
+  return(
     <>
     <LayoutDashboard home>
      
+
     <div class="grid grid-cols-5 gap-4 mb-4">
         <div class="flex items-center justify-center h-24 rounded  col-span-4">
             <p class="text-2xl text-gray-400 dark:text-gray-500"> lets start by including your favorite pet.</p>
@@ -88,7 +102,78 @@ return(
                 </button>
             
         </div>
+      
+      
+    </div>    
 
+    <div>
+         <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles} >
+            
+            <h1>Pet Info Content</h1>
+            <form>
+            <label
+                htmlFor="petname"
+                className="text-gray-500 font-light mt-8 dark:text-gray-50"
+            >
+            Pet Name<span className="text-red-500 dark:text-gray-50">*</span>
+          </label>
+          
+          <input
+            type="text"
+            value={petName}
+            onChange={(e) => {
+              setPetName(e.target.value);
+            }}
+            name="fullname"
+            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+          />
+          <br>
+          </br>
+          <br></br>
+          
+          <label
+                htmlFor="petSize"
+                className="text-gray-500 font-light mt-8 dark:text-gray-50"
+            >
+            Pet Size<span className="text-red-500 dark:text-gray-50">*</span>
+          </label>
+          
+          <input
+            type="text"
+            value={petSize}
+            onChange={(e) => {
+              setPetSize(e.target.value);
+            }}
+            name="petSize"
+            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
+          />
+             <br>
+          </br>
+          <br></br>
+
+            </form>
+            
+            <button onClick={() => setIsOpen(false)}>Close Modal</button>
+            <button 
+            className = "bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" 
+            onClick={() => savePet()}>Save Pet</button>
+         </Modal>
+      </div>
+  
+    </LayoutDashboard>
+    </>
+)
+
+}else{
+return(
+    <>
+    <LayoutDashboard home>
+     
+    
+   <PetsList petsList={pets} />  
+
+    <div class="grid grid-cols-5 gap-4 mb-4">
+      
        
         <p> {`email: ${user_final?.email}`}</p>
         <p> {`userId: ${user_final?.userId}`}</p>
@@ -153,4 +238,5 @@ return(
     </LayoutDashboard>
     </>
 )
+          }  
 }
