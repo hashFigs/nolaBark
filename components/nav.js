@@ -62,6 +62,12 @@ return(
     Blog
   </Link>
   <Link
+    href="/services"
+    className="hidden lg:block font-light text-base text-gray-600 dark:text-gray-50"
+  >
+    Services
+  </Link>
+  <Link
     href="/contact"
     className="hidden lg:block font-light text-base text-gray-600 dark:text-gray-50"
   >

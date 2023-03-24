@@ -8,6 +8,7 @@ import Date from '../components/date';
 import Image from 'next/image';
 import { useSession, signIn, signOut } from "next-auth/react"
 import MainBanner from '../components/home/mainBanner';
+import Testimonials from '../components/home/testimonials';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -79,27 +80,11 @@ export default function Home({ allPostsData }) {
       </Head>
 
       <MainBanner />  
+      <Testimonials />
       
       <div className={styles.container}>
 
-      <h1>user no authenticated</h1>
-     
-      <Image
-        priority
-        src="/images/profile.jpg"
-        className={utilStyles.borderCircle}
-        height={144}
-        width={144}
-        alt=""
-      />
-      <h1 className={utilStyles.heading2Xl}>{"jordi"}</h1>
-   
       
-      <section className={utilStyles.headingMd}>
-        <p>hi my name is jooo</p>
-       
-      </section>
-
       {/* Add this <section> tag below the existing <section> tag */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
