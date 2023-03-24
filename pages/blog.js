@@ -2,6 +2,7 @@ import Layout from "../components/layout"
 import { getSortedPostsData } from "../lib/posts";
 import utilStyles from '../styles/utils.module.css';
 import Link from "next/link";
+import styles from '../components/layout.module.css';
 
 
 
@@ -20,6 +21,7 @@ export default function Blog({ allPostsData }) {
 return(
     <>
     <Layout home>
+    <div className={styles.container}>   
     <h1> this is the blog page and evryone can see it </h1>
 
     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -36,7 +38,7 @@ return(
           ))}
         </ul>
       </section>
-    
+    </div>
     </Layout>
     </>
 )

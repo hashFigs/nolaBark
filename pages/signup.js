@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "../components/layout"
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import styles from '../components/layout.module.css';
 
 export default function Signup() {
    const [username, setUsername]= useState('');
@@ -13,7 +14,6 @@ export default function Signup() {
     
     e.preventDefault();
     
-
     try {
 		const res = await fetch("api/users/register", {
             method: "POST",
@@ -40,8 +40,10 @@ export default function Signup() {
    }
 
     return (
+      <>
       <Layout home>
-      
+        <div className={styles.container}>   
+
       <form
           onSubmit={handleSubmit}
           className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
@@ -109,5 +111,7 @@ export default function Signup() {
             </div>
           
           </form>
-      </Layout>  
+          </div>
+      </Layout> 
+      </>
     )}

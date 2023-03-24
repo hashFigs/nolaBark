@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
+import styles from '../components/layout.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import Image from 'next/image';
 import { useSession, signIn, signOut } from "next-auth/react"
+import MainBanner from '../components/home/mainBanner';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -31,7 +33,10 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       
+   
+
       <h1>user authenticated</h1>
+    
       <h1>{user.email}</h1>  
       <Image
         priority
@@ -66,14 +71,19 @@ export default function Home({ allPostsData }) {
       )
     }
     return(
-    <Layout home>
+      <>
+     
+    <Layout  home MainBanner >
       <Head>
         <title>{siteTitle}</title>
       </Head>
+
+      <MainBanner />  
       
-      
+      <div className={styles.container}>
+
       <h1>user no authenticated</h1>
-       
+     
       <Image
         priority
         src="/images/profile.jpg"
@@ -106,6 +116,8 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
+      </div>
     </Layout>
+    </>
   )
 }
