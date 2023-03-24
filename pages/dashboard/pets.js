@@ -11,12 +11,11 @@ export default function Pets() {
     const [isOpen, setIsOpen] = useState(false)
     const [petName, setPetName] = useState('');
     const [petSize, setPetSize] = useState('');
-    const [pets, setPets] = useState('');
+    const [pets, setPets] = useState([]);
 
     const { data: session } = useSession()
     const user = session?.user;
     const user_final = user?.user;
-  console.log("USERR", user_final?.userId)
 
   
   useEffect(() => {
@@ -30,18 +29,13 @@ export default function Pets() {
              },
             });
       const data = await res.json();     
-      console.log("PET:", data)
       setPets(data);
-
     }
     
     fetchUserPets()
-    .catch(console.error)
-
+    .catch(console.error);
   }, [])
 
-
-  
 
 const savePet = async (e) => {
   try {
@@ -62,8 +56,6 @@ const savePet = async (e) => {
 }
 
 
-
-
 const customStyles = {
     overlay: {
        backgroundColor: 'rgba(0, 0, 0, 0.6)'
@@ -80,13 +72,10 @@ const customStyles = {
 
 
 
-if(!pets) {
-
-  return(
+return(
     <>
     <LayoutDashboard home>
      
-
     <div class="grid grid-cols-5 gap-4 mb-4">
         <div class="flex items-center justify-center h-24 rounded  col-span-4">
             <p class="text-2xl text-gray-400 dark:text-gray-500"> lets start by including your favorite pet.</p>
@@ -105,72 +94,7 @@ if(!pets) {
       
       
     </div>    
-
-    <div>
-         <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles} >
-            
-            <h1>Pet Info Content</h1>
-            <form>
-            <label
-                htmlFor="petname"
-                className="text-gray-500 font-light mt-8 dark:text-gray-50"
-            >
-            Pet Name<span className="text-red-500 dark:text-gray-50">*</span>
-          </label>
-          
-          <input
-            type="text"
-            value={petName}
-            onChange={(e) => {
-              setPetName(e.target.value);
-            }}
-            name="fullname"
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-          />
-          <br>
-          </br>
-          <br></br>
-          
-          <label
-                htmlFor="petSize"
-                className="text-gray-500 font-light mt-8 dark:text-gray-50"
-            >
-            Pet Size<span className="text-red-500 dark:text-gray-50">*</span>
-          </label>
-          
-          <input
-            type="text"
-            value={petSize}
-            onChange={(e) => {
-              setPetSize(e.target.value);
-            }}
-            name="petSize"
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
-          />
-             <br>
-          </br>
-          <br></br>
-
-            </form>
-            
-            <button onClick={() => setIsOpen(false)}>Close Modal</button>
-            <button 
-            className = "bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" 
-            onClick={() => savePet()}>Save Pet</button>
-         </Modal>
-      </div>
-  
-    </LayoutDashboard>
-    </>
-)
-
-}else{
-return(
-    <>
-    <LayoutDashboard home>
-     
-    
-   <PetsList petsList={pets} />  
+   <PetsList petsList ={pets} />  
 
     <div class="grid grid-cols-5 gap-4 mb-4">
       
@@ -238,5 +162,5 @@ return(
     </LayoutDashboard>
     </>
 )
-          }  
+           
 }

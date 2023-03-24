@@ -1,6 +1,7 @@
 
 import React, {useState} from "react";
 import Layout from "../components/layout"
+import styles from '../components/layout.module.css';
 
 
 export default function Contact() {
@@ -67,6 +68,7 @@ export default function Contact() {
   return (
       <>
       <Layout >   
+      <div className={styles.container}>   
 
          <form
           onSubmit={handleSubmit}
@@ -169,7 +171,7 @@ export default function Contact() {
 
          
           </form>
-
+      </div>
       </Layout>
       </>
     )

@@ -5,6 +5,7 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Navbar from './nav';
 import Footer from './footer';
+import MainBanner from './home/mainBanner';
 
 const name = 'Jordi figue';
 export const siteTitle = 'personal portafolio';
@@ -13,7 +14,6 @@ export default function Layout({ children, home }) {
   return (
     <>
     <Navbar></Navbar>
-    <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -31,16 +31,12 @@ export default function Layout({ children, home }) {
       </Head>
       
 
-      <header className={styles.header}>
-       
-      </header>
-      <main>{children}</main>
+      <main>{children}</main> 
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
         </div>
       )}
-    </div>
     <Footer></Footer>
     </>
   );

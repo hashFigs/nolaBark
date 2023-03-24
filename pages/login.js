@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "../components/layout"
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
+import styles from '../components/layout.module.css';
 
 export default function Login({ allPostsData }) {
    const [username, setUsername]= useState('');
@@ -54,7 +55,8 @@ export default function Login({ allPostsData }) {
 
     return (
       <Layout home>
-      
+          <div className={styles.container}>   
+
       <form
           onSubmit={handleSubmit}
           className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
@@ -106,5 +108,6 @@ export default function Login({ allPostsData }) {
             </div>
           
           </form>
+          </div>
       </Layout>  
     )}
