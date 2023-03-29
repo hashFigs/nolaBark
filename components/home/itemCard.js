@@ -1,6 +1,7 @@
 import Image from "next/image"
+import Link from "next/link"
 
-export default function ItemCard({title, description, price, image}) {
+export default function ItemCard({title, description, price, image, link}) {
     const imagePath = `/images/${image}`
     
     return(
@@ -27,10 +28,11 @@ export default function ItemCard({title, description, price, image}) {
                 </div>
 
                 <div class="flex justify-center">   
-
+                    <Link href={`${link}`}>
                     <button 
                       className=" px-8 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
                     >LEARN MORE</button> 
+                    </Link>
                     </div>
                     </div>
             

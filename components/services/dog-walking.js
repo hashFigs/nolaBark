@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ServiceCard from "./servicesCard";
+
 export default function DogWalking () {
 
   return (
