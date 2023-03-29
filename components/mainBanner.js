@@ -1,17 +1,18 @@
 import Image from 'next/image'
 
-export default function MainBanner({image, title}) {
+export default function MainBanner({image, title, height, anchor}) {
 
-    const imagePath = `/images/${image}`
-   console.log(imagePath)
+  //transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0
+  const imagePath = `/images/${image}`
+  const imageClass = `h-${height} w-full object-cover object-${anchor} `
     return(
         <div class="relative">
             <Image
             priority
-            className='h-64 w-full object-cover object-bottom'
+            className={imageClass}
             src={imagePath}
-            height={144}
-            width={1400}
+            height={500}
+            width={1000}
             alt=""
             />
             
