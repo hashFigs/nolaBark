@@ -11,6 +11,8 @@ export default function Services({ allPostsData }) {
         <MainBanner 
             title = {"SAFE. TRUSTED. LOCAL"}
             image = {"wet_mouse.jpg"}
+            height = {"80"}
+            anchor = {"bottom"}
         />      
         <DogWalking />
         <Benefits 

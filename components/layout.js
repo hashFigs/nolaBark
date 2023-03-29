@@ -18,7 +18,7 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Pet care and Dog walking Services in New Orleans"
         />
         <meta
           property="og:image"
@@ -32,11 +32,7 @@ export default function Layout({ children, home }) {
       
 
       <main>{children}</main> 
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
+     
     <Footer></Footer>
     </>
   );
