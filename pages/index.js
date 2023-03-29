@@ -8,8 +8,7 @@ import Socials from '../components/home/socials';
 import { getSortedPostsData } from '../lib/posts';
 
 import { useSession, signIn, signOut } from "next-auth/react"
-import MainBanner from '../components/home/mainBanner';
-import MainBanner2 from '../components/mainBanner';
+import MainBanner from '../components/mainBanner';
 import Testimonials from '../components/home/testimonials';
 
 export async function getStaticProps() {
@@ -38,11 +37,11 @@ export default function Home({ allPostsData }) {
           <title>{siteTitle}</title>
         </Head>
 
-        <MainBanner2
+        <MainBanner
             title = {"New Orleans Best Pet Care"}
             image = {"main.jpg"}
-            height = {"80"}
-            topmargin = {"top"}
+            height = {"60"}
+            anchor = {"top"}
         />      
         
 

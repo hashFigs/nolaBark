@@ -23,6 +23,7 @@ export default function Services () {
                     description = { "Whether you need care for your cat, bird, lizard, guinea pig we've got you covered."}
                     price = { "21"}
                     image={"small-dog2.jpg"}
+                    link={"/pet-sitting"}
                 />      
                 </div>
 
@@ -32,6 +33,7 @@ export default function Services () {
                     description = { "A variety of times and services to meet you and your dog's needs."}
                     price = { "26"}  
                     image={"regular-daily.jpg"}
+                    link={"/dog-walking"}
                 /> 
                 </div>
                 
@@ -41,6 +43,7 @@ export default function Services () {
                 description = { "We know that leaving your pet is nerve-racking so let our care associate stay at your place."}
                 price = { "33"}
                 image={"explorer-dog.jpg"}
+                link={"/in-home-boarding"}
                 /> 
                 </div>
             
@@ -50,6 +53,7 @@ export default function Services () {
                 description = { "We have seen it all. Have one of our insured pet sitters check in on your place to make sure your home is safe and secure.  We even make sure plants are water, fish are fed, sign for packages and take in mail. "}
                 price = { "44"}
                 image={"energetic-dog.jpg"}
+                link={"/house-check-ins"}
                 /> 
                 </div>
             </div>

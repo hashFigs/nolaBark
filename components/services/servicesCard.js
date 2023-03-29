@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function ServiceCard({title, description, price, image}) {
     const imagePath = `/images/${image}`
@@ -26,6 +27,7 @@ export default function ServiceCard({title, description, price, image}) {
                         <p tabindex="0" class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">{ description }</p>
                                
                     </div>
+
                     <button 
                       className="px-8 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
                     >Get Started: ${price}</button> 

@@ -4,7 +4,7 @@ export default function MainBanner({image, title, height, anchor}) {
 
   //transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0
   const imagePath = `/images/${image}`
-  const imageClass = `h-${height} w-full object-cover object-${anchor} `
+  const imageClass = `h-60 w-full object-cover object-${anchor} `
     return(
         <div class="relative">
             <Image

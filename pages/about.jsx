@@ -10,6 +10,8 @@ return(
         <MainBanner 
             title = {"ABOUT US"}
             image = {"back-walking.jpg"}
+            height = {"60"}
+            anchor = {"top"}
         />     
         <AboutUs/>
         
