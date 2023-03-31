@@ -2,12 +2,15 @@ import { render } from "react-dom";
 import Layout from "../components/layout";
 import MainBanner from "../components/mainBanner";
 import LayoutImgTxt from "../components/layoutImgTxt";
+import DogWalking from "../components/services/dog-walking";
 
-export default function DogWalking() {
+export default function DogWalkings() {
 
     return(
         <>
-    <Layout home>
+
+       
+        <Layout home>
         <MainBanner 
             title = {" Trust your pet with the best"}
             image = {"back-walking.jpg"}
@@ -15,7 +18,8 @@ export default function DogWalking() {
             anchor = {"top"}
         />     
         
-
+       <DogWalking />
+       
        <LayoutImgTxt
             title = {"Dog Walking"}
             description = { "sdklfjflksj"}
@@ -23,13 +27,9 @@ export default function DogWalking() {
             imgside = {"left"}
             linkText = {"Learn More"}
             linkUrl = {'/contact'}
+            
        />
-        <LayoutImgTxt
-            title = {"Dog Walking"}
-            description = { "sdklfjflksj"}
-            image = {"back-walking.jpg"}
-            imgside = {"right"}
-       />
+       
 
     </Layout>
         </>
