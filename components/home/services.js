@@ -11,9 +11,8 @@ export default function Services () {
            
             <div class="container mx-auto ">
 
-          
-            <h1 className="text-center text-5xl py-10"> Our Services</h1>
-            <h2 className="text-center text-2xl">We offer a Variety of Services. Here are our most popular:</h2>
+            <h1 className="text-center text-3xl py-10 font-semibold"> OUR SERVICES</h1>
+            <h2 className="text-center text-2xl">We offer a variety of services. Here are our most popular:</h2>
       
             
             <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-2">
