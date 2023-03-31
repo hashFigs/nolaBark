@@ -10,7 +10,6 @@ const listItems = description.map((item) =>
 </li>
 );
 
-console.log("LISTT", listItems)
 
     return (
 
@@ -29,7 +28,7 @@ console.log("LISTT", listItems)
           </div>
 
           <div class="p-6">
-            <h1 className ="text-2xl">{title}</h1>
+            <h1 className ="text-2xl font-semibold">{title}</h1>
             <ul>{listItems }</ul>   
             <button 
                       className="px-8 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"

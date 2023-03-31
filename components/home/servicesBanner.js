@@ -1,7 +1,7 @@
 import ServiceCard from "../services/servicesCard";
 import ItemCard from "./itemCard";
 
-export default function Services () {
+export default function ServicesBanner() {
 
     return(
         <>
