@@ -2,21 +2,45 @@ import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import Date from '../../components/date';
+import Image from 'next/image';
 
 
 export default function Post({postData}) {
+  const Imagepath = `/images/${postData.image}`
   return <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      
-     {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      <Date dateString={postData.date} />
-      <br />
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+     
+          <div className="container mx-auto ">  
+                 
+                  <div className="p-20">
+                      <Image
+                          priority
+                          className={"p-10  float-left" }
+                          src={Imagepath}
+                          height="500"
+                          width="500"
+                          alt=""
+                      />        
+                      
+                      <h1 className="text-4xl">{postData.title}</h1>
+                      <Date dateString={postData.date} />
+                                     
+                      <div className="space-y-4" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+                      
+                  </div>
+              </div>
+          
+              
+                    
+     
+
+
+
+
+     
+     
   </Layout>;
 }
 

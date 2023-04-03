@@ -30,10 +30,10 @@ export default function LayoutImgTxt ({title, description, image, height, width,
               
         
                <div className={sectionBg}>
-                <div class="container mx-auto ">  
-                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+                <div classNmae="container mx-auto ">  
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
                         
-                        <div class="flex justify-center p-20 text-6xl">
+                        <div className="flex justify-center p-20 text-6xl">
                             <Image
                                 priority
                                 className={imageClass}
@@ -44,7 +44,7 @@ export default function LayoutImgTxt ({title, description, image, height, width,
                             />          
                         </div>
 
-                        <div class="p-20">
+                        <div className="p-20">
                             <h1 className="text-4xl">{title}</h1>
                             <p className=" texk-l py-6">{description}</p>
                             
@@ -69,11 +69,11 @@ export default function LayoutImgTxt ({title, description, image, height, width,
         return(
             <>
                 <div className={sectionBg}>
-                <div class="container mx-auto ">  
-                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+                <div className="container mx-auto ">  
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
                         
                        
-                        <div class="p-20">
+                        <div className="p-20">
                         <h1 className="text-4xl">{title}</h1>
                             <p className=" texk-l py-6">{description}</p>
                             
@@ -88,7 +88,7 @@ export default function LayoutImgTxt ({title, description, image, height, width,
                             } 
                         </div>
 
-                        <div class="flex justify-center p-20 text-6xl">
+                        <div className="flex justify-center p-20 text-6xl">
                             
                             <Image
                                 priority
