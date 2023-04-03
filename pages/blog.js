@@ -22,10 +22,9 @@ return(
     <>
     <Layout home>
     <div className={styles.container}>   
-    <h1> this is the blog page and evryone can see it </h1>
-
+  
     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h1 className={utilStyles.headingLg}>Blog</h1>
         <ul className={utilStyles.list}>
           
           {allPostsData.map(({ id, date, title }) => (

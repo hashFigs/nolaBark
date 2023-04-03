@@ -3,39 +3,23 @@ import Image from "next/image"
 export default function AboutUs() {
   return (
     <>
-    <section class="container mx-auto px-6 p-10">
-      <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
-        Features
-      </h2>
-      <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <h4 class="text-3xl text-gray-800 font-bold mb-3">Exercise Metric</h4>
-          <p class="text-gray-600 mb-8">Our Smart Health Monitoring Wristwatch is able to capture you vitals while you exercise. You can create different category of exercises and can track your vitals on the go.</p>
-        </div>
-        <div class="w-full md:w-1/2">
-          <img src="assets/health.svg" alt="Monitoring" />
-        </div>
-      </div>
+    <section class="container space-y-4 mx-auto px-6 p-10">
+      <p>Welcome to 7th ward Pet Services, your trusted pet walking service in the heart of the city! 
+        We understand that your furry family member is a beloved part of your life and deserves the best care possible. 
+        That's why we're dedicated to providing reliable, compassionate, and personalized pet walking services that meet the individual 
+        needs of each pet and their owner.</p>
 
-      <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <img src="assets/report.svg" alt="Reporting" />
-        </div>
-        <div class="w-full md:w-1/2 pl-10">
-          <h4 class="text-3xl text-gray-800 font-bold mb-3">Reporting</h4>
-          <p class="text-gray-600 mb-8">Our Smart Health Monitoring Wristwatch can generate a comprehensive report on your vitals depending on your settings either daily, weekly, monthly, quarterly or yearly.</p>
-        </div>
-      </div>
-
-      <div class="flex items-center flex-wrap mb-20">
-        <div class="w-full md:w-1/2">
-          <h4 class="text-3xl text-gray-800 font-bold mb-3">Syncing</h4>
-          <p class="text-gray-600 mb-8">Our Smart Health Monitoring Wristwatch allows you to sync data across all your mobile devices whether iOS, Android or Windows OS and also to your laptop whether MacOS, GNU/Linux or Windows OS.</p>
-        </div>
-        <div class="w-full md:w-1/2">
-          <img src="assets/sync.svg" alt="Syncing" />
-        </div>
-      </div>
+        <p>Our team of experienced and trained pet professionals is passionate 
+        about animals and committed to ensuring your pet's safety and well-being. We take the time to get to know your
+         pet's unique personality, preferences, and needs, and tailor our services accordingly. At 7th ward Pet Services, 
+         we offer a variety of pet walking services to fit your busy schedule, including regular daily walks, one-time walks, 
+         and customized walking plans. We also offer additional services such as feeding, water changes, and litter box cleaning 
+         to ensure your pet is comfortable and happy while you're away. </p>
+         
+         <p>We believe in open and honest communication with our clients 
+         and provide regular updates and photos during each walk to keep you informed and connected with your pet's daily routine. 
+         Thank you for considering Pawsome Walks for your pet walking needs. We look forward to getting to know you and your furry
+          family member!</p>
     </section>
     </>
   )
