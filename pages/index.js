@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import Services from '../components/home/servicesBanner';
 import Tracking from '../components/home/tracking';
-import Blog from '../components/home/blog';
+import BlogGallery from '../components/blog/blogGallery';
 import NewsLetter from '../components/newsLetter';
 
 import { getSortedPostsData } from '../lib/posts';
@@ -51,7 +51,7 @@ export default function Home({ allPostsData }) {
         
         <Tracking />
         
-        <Blog />
+        <BlogGallery posts={allPostsData}/>
         <NewsLetter/>
        
       

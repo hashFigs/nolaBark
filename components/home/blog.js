@@ -1,10 +1,10 @@
+import MainBlog from '../../pages/blog'
 
-export default function Blog () {
+export default function Blogbanner () {
 
     return(
         <>
-         <h1> This is our blog</h1>
-         <h2>We offer a Variety of Services. Here are our most popular:</h2>
+       <p>this is the blog fior thye main page</p>
         </>
     )
 }
