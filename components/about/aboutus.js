@@ -20,6 +20,9 @@ export default function AboutUs() {
          and provide regular updates and photos during each walk to keep you informed and connected with your pet's daily routine. 
          Thank you for considering Pawsome Walks for your pet walking needs. We look forward to getting to know you and your furry
           family member!</p>
+
+
+
     </section>
     </>
   )
