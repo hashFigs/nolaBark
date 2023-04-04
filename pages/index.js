@@ -9,7 +9,7 @@ import { getSortedPostsData } from '../lib/posts';
 
 import { useSession, signIn, signOut } from "next-auth/react"
 import MainBanner from '../components/mainBanner';
-import Testimonials from '../components/home/testimonials';
+import HomeBanner from '../components/homeBanner';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -25,8 +25,6 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   const { data: session } = useSession()
   const user = session?.user;
-  console.log(session)
-  
   
   return(
       <>
@@ -37,23 +35,17 @@ export default function Home({ allPostsData }) {
           <title>{siteTitle}</title>
         </Head>
 
-        <MainBanner
+        <HomeBanner
             title = {"New Orleans Best Pet Care"}
-            image = {"main.jpg"}
+            image = {"main-Banner.jpg"}
             height = {"60"}
             anchor = {"top"}
         />      
         
-
-       
-        
         <Services />
-        
         <Tracking />
-        
         <BlogGallery posts={allPostsData}/>
         <NewsLetter/>
-       
       
       </Layout>
     </>

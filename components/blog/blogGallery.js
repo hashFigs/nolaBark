@@ -8,34 +8,47 @@ export default function BlogGallery ({posts}) {
 
     return(
         <>
-        <h1 className={`text-center ${utilStyles.headingLg}`}>Blog</h1>
+         
+         <div class="container xl:w-full w-11/12 mx-auto pt-16 overflow-y-hidden ">
+                    <div class="w-full">
+                        <p class="text-gray-600 dark:text-gray-200 text-lg font-normal pb-3 sm:text-left text-center">BUILDING TEAM</p>
+                        <h1 class="xl:text-4xl lg:text-4xl text-3xl sm:text-left text-center text-gray-800 dark:text-white  font-extrabold sm:w-4/6 w-5/6 mx-auto sm:mx-0">wow Blog</h1>
+                    </div>
 
-          <div class="grid grid-cols-1 gap-0 md:grid-cols-3 lg:grid-cols-3">
-                        
-          {posts.map(({ id, date, title, image }) => (
-            <>
-            <div class=" justify-center p-10">
-              <Link href={`/posts/${id}`}>
-             <Image
-             priority
-             className={"P-10"}
-             src={`/images/${image}`}
-             height={"500"}
-             width={"500"}
-             alt=""
-         />          
+                    <div class="grid grid-cols-1 gap-0 md:grid-cols-3 lg:grid-cols-3 ">
+                    
+                    {posts.map(({ id, date, title, image }) => (
+                            <>
+                         
+                         <Link href={`/posts/${id}`}>
+                         <div class=" border-b border-gray-300 dark:border-gray-700 p-2">
+                            <div class="w-full rounded h-56">
+                                
+                                <Image
+                                    priority
+                                    className={"object-cover h-full w-full overflow-hidden rounded shadow"}
+                                    src={`/images/${image}`}
+                                    height={"400"}
+                                    width={"400"}
+                                    alt=""
+                                />  
+                            </div>
+                            
+                            <div class="flex w-full items-center justify-between pt-6 pb-1">
+                                <p class="text-xl font-normal text-gray-800 dark:text-white ">{title}</p>
+                                
+                            </div>
+                            <p class="text-base text-gray-600 dark:text-gray-200 pb-3">{date}</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">The Vice President, Operations is responsible for planning, directing, and overseeing finance and operations activities in the organization, and ensuring development.</p>
+                        </div>  
+                        </Link>
 
-            <h2>{title}</h2>
-            <p>{date}</p>
+                        </>
+                        ))}       
+                        </div>
+                    </div>
 
-            </Link>
-            <br />
-        
-          </div>
-          </>
-          ))}
-   </div>
-   </>
+        </>
        
     )
 }
