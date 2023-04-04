@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
-import Navbar from './nav';
+import Navbar from './nav2';
 import Footer from './footer';
 import MainBanner from './home/mainBanner';
 
