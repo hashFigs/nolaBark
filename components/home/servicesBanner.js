@@ -7,7 +7,7 @@ export default function ServicesBanner() {
         <>
          
        
-        <div class="bg-orange-600 ">
+        <div class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ">
            
             <div class="container mx-auto ">
 
