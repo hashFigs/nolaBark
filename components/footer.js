@@ -33,7 +33,7 @@ useEffect(() => {
 
 return(
     <>
-<nav className="flex flex-row justify-between items-center p-8 bg-pink-50 dark:bg-blue-900">
+<nav className="flex flex-row justify-between items-center p-8 bg-orange-300 dark:bg-blue-900">
 
 <div className="relative flex flex-row space-x-2 items-center">
 

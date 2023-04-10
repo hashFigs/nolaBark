@@ -2,7 +2,7 @@ import LayoutDashboard from "../../components/layoutDasboard"
 import { signOut, useSession } from "next-auth/react"
 
 
-export default function index() {
+export default function Index() {
     const { data: session } = useSession()
     const user = session?.user;
     const user_final = user?.user;

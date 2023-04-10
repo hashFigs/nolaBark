@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router'
 
-
 export default function Navbar() {
 
 const [logintext, setLogintext] = useState('login'); 
