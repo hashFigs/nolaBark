@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-export default function addPetModal(props) {
-  let [isOpen, setIsOpen] = useState(false);
-
+export default function AddPetModal(props) {
+  const [petName, setPetName] = useState("");
   const customStyles = {
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.6)",
