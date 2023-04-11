@@ -30,7 +30,7 @@ export default function LayoutImgTxt ({title, description, image, height, width,
               
         
                <div className={sectionBg}>
-                <div classNmae="container mx-auto ">  
+                <div className="container mx-auto ">  
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
                         
                         <div className="flex justify-center p-20 text-6xl">
