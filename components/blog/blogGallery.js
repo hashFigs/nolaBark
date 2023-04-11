@@ -11,8 +11,7 @@ export default function BlogGallery ({posts}) {
          
          <div class="container xl:w-full w-11/12 mx-auto pt-16 overflow-y-hidden ">
                     <div class="w-full">
-                        <p class="text-gray-600 dark:text-gray-200 text-lg font-normal pb-3 sm:text-left text-center">BUILDING TEAM</p>
-                        <h1 class="xl:text-4xl lg:text-4xl text-3xl sm:text-left text-center text-gray-800 dark:text-white  font-extrabold sm:w-4/6 w-5/6 mx-auto sm:mx-0">wow Blog</h1>
+                        <h1 class="xl:text-5xl lg:text-5xl text-3xl sm:text-left text-center text-gray-800 dark:text-white  font-extrabold sm:w-4/6 w-5/6 mx-auto sm:mx-0">Wow Blog</h1>
                     </div>
 
                     <div class="grid grid-cols-1 gap-0 md:grid-cols-3 lg:grid-cols-3 ">
