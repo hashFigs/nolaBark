@@ -16,7 +16,7 @@ export default function HomeBanner({image, title, height, anchor}) {
             alt=""
             />
             
-            <h1 className="absolute text-5xl text-gray-900 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white">
+            <h1 className="absolute text-7xl text-gray-900 top-1/2 left-1/3 -translate-x-1/3 -translate-y-1/2 font-extrabold text-center text-white">
                 {title}
             </h1>
         </div>

@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 import react, { useState, useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react"
@@ -41,48 +40,49 @@ return(
     <>
 <Navbar
   fluid={true}
-  rounded={true}
+  rounded={false}
+  className="p-4 !bg-gray-600 "
 >
   <Navbar.Brand href="/">
     <Image
-        src="https://flowbite.com/docs/images/logo.svg"
+        src="/images/cattle.png"
         className="mr-3 h-6 sm:h-9"
-        width={50}
-        height={200}
+        width={60}
+        height={70}
         alt="" 
     />
    
-    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-      7Th ward Pet Services
+    <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
+      Barkuskrewe
     </span>
   </Navbar.Brand>
 
   <div className="flex md:order-2">
 
-  <Link href="/services">
-    <Button>
-      Get started
-    </Button>
-    </Link>
+  
     <Navbar.Toggle />
   </div>
   <Navbar.Collapse>
     <Navbar.Link
       href="/"
       active={false}
+      className="text-white"
     >
       Home
     </Navbar.Link>
-    <Navbar.Link href="/about">
+    <Navbar.Link 
+        href="/about"
+        className="text-white"
+        >
       About Us
     </Navbar.Link>
-    <Navbar.Link href="/services">
+    <Navbar.Link href="/services" className="text-white">
       Services
     </Navbar.Link>
-    <Navbar.Link href="/blog">
+    <Navbar.Link href="/blog" className="text-white">
       Blog
     </Navbar.Link>
-    <Navbar.Link href="/contact">
+    <Navbar.Link href="/contact" className="text-white">
       Contact
     </Navbar.Link>
   </Navbar.Collapse>
@@ -91,8 +91,6 @@ return(
     </>
 /*
 <>
-
-
 <Navbar
   fluid={true}
   rounded={true}
@@ -134,23 +132,7 @@ return(
     </Navbar.Link>
   </Navbar.Collapse>
 </Navbar>
-
-
 </>
 */
 )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
