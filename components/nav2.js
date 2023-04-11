@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from "flowbite-react";
 import { Button } from "flowbite-react";
 
+
 export default function Navbar2() {
 const [isOpen, toggleSidebar] = useState(false);
 const [logintext, setLogintext] = useState('login'); 
@@ -51,27 +52,27 @@ return(
   </Navbar.Brand>
   <div className="flex md:order-2">
     <Button>
-      Get started
+      Get startedyy
     </Button>
     <Navbar.Toggle />
   </div>
   <Navbar.Collapse>
     <Navbar.Link
-      href="/navbars"
-      active={true}
+      href="/"
+      
     >
       Home
     </Navbar.Link>
-    <Navbar.Link href="/navbars">
-      About
+    <Navbar.Link href="/about">
+      About Us
     </Navbar.Link>
-    <Navbar.Link href="/navbars">
+    <Navbar.Link href="/services">
       Services
     </Navbar.Link>
-    <Navbar.Link href="/navbars">
-      Pricing
+    <Navbar.Link href="/blog">
+      Blog
     </Navbar.Link>
-    <Navbar.Link href="/navbars">
+    <Navbar.Link href="/contact">
       Contact
     </Navbar.Link>
   </Navbar.Collapse>

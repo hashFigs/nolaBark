@@ -15,6 +15,9 @@ export default function Layout({ children, home }) {
     <>
     <Navbar></Navbar>
       <Head>
+      <link rel="stylesheet" href="https://unpkg.com/flowbite@1.1.1/dist/flowbite.min.css" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -35,6 +38,8 @@ export default function Layout({ children, home }) {
        
      
     <Footer></Footer>
+    <script src="https://unpkg.com/flowbite@1.1.1/dist/flowbite.js"></script>
+
     </>
   );
 }
