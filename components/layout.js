@@ -38,8 +38,8 @@ export default function Layout({ children, home }) {
        
      
     <Footer></Footer>
-    <script src="https://unpkg.com/flowbite@1.1.1/dist/flowbite.js"></script>
-
     </>
   );
 }
+//      <script src="https://unpkg.com/flowbite@1.1.1/dist/flowbite.js"></script>
+
