@@ -66,7 +66,7 @@ return(
     <Navbar.Link
       href="/"
       active={false}
-      className="text-white"
+      className="text-white hover:text-gray-300"
     >
       Home
     </Navbar.Link>

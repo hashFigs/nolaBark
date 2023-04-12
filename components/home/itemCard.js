@@ -6,7 +6,7 @@ export default function ItemCard({title, description, price, image, link}) {
     
     return(
         <>
-          <div tabIndex="0" class=" p-2 bg-white focus:outline-none mx-2 w-72 xl:mb-0 mb-8 ">
+          <div tabIndex="0" class=" p-2 bg-white focus:outline-none mx-2 w-72 xl:mb-0 mb-8 border-b border-gray-300 dark:border-gray-700">
             
                 <Image
                     priority
@@ -23,7 +23,7 @@ export default function ItemCard({title, description, price, image, link}) {
             <div class="bg-white dark:bg-gray-800">               
                 <div class="p-4 justify-center">
                     <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">{ title }</h2>
-                    <p tabindex="0" class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">{ description }</p>   
+                    <p tabindex="0" class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">{ description }</p>   
                                
                 </div>
 

@@ -19,8 +19,8 @@ export default function ServiceCard({title, description, price, image}) {
             
             </div>
             
-            <div class="bg-white dark:bg-gray-800">               
-                <div class="p-4">
+            <div class="bg-white ">               
+                <div class="py-6">
                     <div class="flex items-center">
                         <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">{ title }</h2>
                     </div>

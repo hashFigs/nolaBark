@@ -27,8 +27,6 @@ export default function LayoutImgTxt ({title, description, image, height, width,
     if(imgside === 'left'){
         return(
             <>
-              
-        
                <div className={sectionBg}>
                 <div className="container mx-auto ">  
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
@@ -45,9 +43,9 @@ export default function LayoutImgTxt ({title, description, image, height, width,
                         </div>
 
                         <div className="p-20">
-                            <h1 className="text-4xl">{title}</h1>
-                            <p className=" texk-l py-6">{description}</p>
-                            
+                            <h1 className="text-3xl font-extrabold">{title}</h1>
+                            <p className=" texk-l py-6 text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">{description}</p>
+                                          
                             {
                                 linkTextIn===null ? 
                                 <p> </p>:
@@ -74,8 +72,8 @@ export default function LayoutImgTxt ({title, description, image, height, width,
                         
                        
                         <div className="p-20">
-                        <h1 className="text-4xl">{title}</h1>
-                            <p className=" texk-l py-6">{description}</p>
+                        <h1 className="text-3xl font-extrabold">{title}</h1>
+                        <p className=" texk-l py-6 text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">{description}</p>
                             
                             {
                                 linkTextIn===null ? 
