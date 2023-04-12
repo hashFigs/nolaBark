@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router'
+import Link from "next/link";
 
 
 export default function Footer() {
@@ -76,9 +77,11 @@ return(
           Services
         </h6>
         <p class="mb-4">
-          <a href="/pet-sitting" class="text-neutral-600 dark:text-neutral-200"
-            >Pet Sitting</a
-          >
+          <Link 
+           href="/pet-sitting" 
+           class="text-neutral-600 dark:text-neutral-200">
+          
+            Pet Sitting</Link>
         </p>
         <p class="mb-4">
           <a href="#!" class="text-neutral-600 dark:text-neutral-200"
