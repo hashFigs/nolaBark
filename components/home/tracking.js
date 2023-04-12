@@ -5,9 +5,9 @@ export default function Tracking () {
         <>
 
 
-         <div className="container mx-auto text-center py-10">
+         <div className="container mx-auto text-center pt-0.5">
          <h1 className= "text-3xl py-4 font-semibold"> FEATURING FUR, FEATHERS, SCALES AND MORE!</h1>
-         <p className="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">If you and your pet are in North or Central Brooklyn, we’re here for you.  Become a Brooklyn Barker and get app booking, GPS-tracking on dog walks, in-home boarding, pet sitting and other award-winning, Peace of Mind giving pet care services. </p>
+         <p class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">If you and your pet are in North or Central Brooklyn, we’re here for you.  Become a Brooklyn Barker and get app booking, GPS-tracking on dog walks, in-home boarding, pet sitting and other award-winning, Peace of Mind giving pet care services. </p>
          
          
          <div class="grid grid-cols-1 gap-0 md:grid-cols-3 lg:grid-cols-3 py-10">
@@ -49,7 +49,7 @@ export default function Tracking () {
                     alt=""
                 />
                     <h1 className ="py-5 text-2xl font-semibold">DIGITAL UPDATES WITH PHOTOS</h1>
-                    <p className="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">You are always in the loop. Since you can’t physically be there, you can be there digitally. You’ll always know where your pup is from the automatic “care has started” email through the GPS-tracked map of the walk, time-stamped details, your Care Associate’s notes with lots of great walk photos.  This isn’t just Peace of Mind but we want you to enjoy pup’s walk, at least virtually.</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">You are always in the loop. Since you can’t physically be there, you can be there digitally. You’ll always know where your pup is from the automatic “care has started” email through the GPS-tracked map of the walk, time-stamped details, and lots of great walk photos.  </p>
                 </div>
                 </div>
                 </div>

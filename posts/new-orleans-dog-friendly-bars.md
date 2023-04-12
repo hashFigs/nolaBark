@@ -1,7 +1,7 @@
 ---
 title: 'New Orleans dog friendly bars'
 date: '2023-04-03'
-image: 'frenchy.jpg'
+image: 'dogbar.jpg'
 ---
 
 New Orleans is a city that loves its dogs, and there's no better way to enjoy the company of your furry friend than over a cold drink in a dog-friendly bar. From beer gardens to swanky cocktail lounges, here are some of the best dog bars in New Orleans.
