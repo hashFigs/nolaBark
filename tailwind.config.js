@@ -11,7 +11,11 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'newsletter' : "url('../public/images/high5.jpg')",
+      }
+    },
   },
   plugins: [ require('flowbite/plugin')],
 }
