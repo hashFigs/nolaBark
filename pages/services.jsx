@@ -14,6 +14,7 @@ export default function Services({ allPostsData }) {
             image = {"wet_mouse.jpg"}
             height = {"60"}
             anchor = {"bottom"}
+            withSvg = {false}
         />      
 
 
