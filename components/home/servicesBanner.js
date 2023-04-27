@@ -7,7 +7,7 @@ export default function ServicesBanner() {
         <>
          
        
-        <div class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ">
+        <div class="section-bg">
            
             <div class="container mx-auto ">
 
@@ -19,8 +19,7 @@ export default function ServicesBanner() {
                 <div class="flex justify-center py-6 text-6xl">
                 <ItemCard
                     title= {"Pet Sitting"}
-                    description = { "Whether you need care for your cat, bird, lizard, guinea pig we've got you covered."}
-                    price = { "21"}
+                    description = { "We provide pet care services that cater to a variety of animals including cats, birds, lizards, and guinea pigs."}
                     image={"small-dog2.jpg"}
                     link={"/pet-sitting"}
                 />      
@@ -29,8 +28,7 @@ export default function ServicesBanner() {
                 <div class="flex justify-center py-6 text-6xl " >
                 <ItemCard
                     title= {"Dog Walking"}
-                    description = { "A variety of times and services to meet you and your dog's needs."}
-                    price = { "26"}  
+                    description = { "We offer a range of services and scheduling options for dog walking that can be customized to meet both you and your dog's specific needs."}
                     image={"regular-daily.jpg"}
                     link={"/dog-walking"}
                 /> 
@@ -39,8 +37,7 @@ export default function ServicesBanner() {
                 <div  class="flex justify-center py-6 text-6xl ">
                 <ItemCard
                 title= {"In-Home Boarding"}
-                description = { "We know that leaving your pet is nerve-racking so let our care associate stay at your place."}
-                price = { "33"}
+                description = { "We understand that leaving your beloved pet can be stressful, which is why we offer in-home boarding services where our caretaker can stay at your residence to provide the necessary care and attention your pet deserves."}
                 image={"explorer-dog.jpg"}
                 link={"/in-home-boarding"}
                 /> 
@@ -49,8 +46,7 @@ export default function ServicesBanner() {
                 <div  class="flex justify-center py-6 text-6xl">
                 <ItemCard
                 title= {"House check-ins"}
-                description = { "We have seen it all. Have one of our insured pet sitters check in on your place to make sure your home is safe and secure.  We even make sure plants are water, fish are fed, sign for packages and take in mail. "}
-                price = { "44"}
+                description = { "Our pet sitters have extensive experience in house check-ins, ensuring that your home is safe and secure. We also offer additional services such as watering plants, feeding fish, signing for packages, and collecting mail to provide you with complete peace of mind while you're away."}
                 image={"energetic-dog.jpg"}
                 link={"/house-check-ins"}
                 /> 
@@ -63,3 +59,5 @@ export default function ServicesBanner() {
         </>
     )
 }
+
+// <div class="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ">
