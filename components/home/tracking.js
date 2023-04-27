@@ -6,22 +6,7 @@ export default function Tracking () {
 
          
         
-<div class="bg-gray-50  flex items-center justify-center px-16">
-  <div class="relative w-full max-w-full">
-    <div class="absolute top-30 -left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-    <div class="absolute top-40 -right-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-  
-    <div class="m-1 relative space-y-4">
-     
-    <h1 className= "z-1000 text-3xl py-12 font-semibold"> {"Showcasing animals with fur, feathers, scales, and beyond!".toUpperCase()}</h1>
-    <p class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">No matter where you are in New Orleans, we&apos; re ready to assist you and your furry friend. Join our Nola Barker community and enjoy the convenience of booking pet care services through our app, complete with GPS tracking for dog walks, in-home boarding, pet sitting, and other award-winning, peace-of-mind-giving services. </p>
-         
-   
-      
-    </div>
-  </div>
-</div>
+
 
 
 
@@ -79,3 +64,25 @@ export default function Tracking () {
         </>
     )
 }
+
+
+/*
+
+<div class="bg-gray-50  flex items-center justify-center px-16">
+  <div class="relative w-full max-w-full">
+    <div class="absolute top-30 -left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+    <div class="absolute top-40 -right-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+  
+    <div class="m-1 relative space-y-4">
+     
+    <h1 className= "z-1000 text-3xl py-12 font-semibold"> {"Showcasing animals with fur, feathers, scales, and beyond!".toUpperCase()}</h1>
+    <p class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">No matter where you are in New Orleans, we&apos; re ready to assist you and your furry friend. Join our Nola Barker community and enjoy the convenience of booking pet care services through our app, complete with GPS tracking for dog walks, in-home boarding, pet sitting, and other award-winning, peace-of-mind-giving services. </p>
+         
+   
+      
+    </div>
+  </div>
+</div>
+
+*/
