@@ -12,7 +12,7 @@ return(
             image = {"back-walking.jpg"}
             height = {"60"}
             anchor = {"top"}
-            withSvg = { true }
+            withSvg = { "1" }
         />     
         <AboutUs/>
         

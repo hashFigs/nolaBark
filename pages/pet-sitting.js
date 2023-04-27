@@ -13,6 +13,7 @@ export default function PetSitting() {
             image = {"back-walking.jpg"}
             height = {"60"}
             anchor = {"top"}
+            withSvg = {"2"}
         />    
 
         <LayoutImgTxt
@@ -22,6 +23,7 @@ export default function PetSitting() {
             imgside = {"left"}
             linkText = {"Learn More"}
             linkUrl = {'/contact'}
+            withSvg = {"4"}
            
        />
 
@@ -33,6 +35,7 @@ export default function PetSitting() {
             linkText = {"Learn More"}
             linkUrl = {'/contact'}
             background = {"bg-amber-600"}
+            withBgSvg = {"3"}
        />
 
         <LayoutImgTxt
@@ -42,6 +45,8 @@ export default function PetSitting() {
             imgside = {"left"}
             linkText = {"Learn More"}
             linkUrl = {'/contact'}
+            withSvg = {"2"}
+           
        />
         
         
