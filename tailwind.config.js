@@ -31,6 +31,10 @@ module.exports = {
           },
         },
       },
+      BannerfontSize: {
+        'banner-screen-lg': '1rem',
+        'banner-scren-sm': '.875rem',
+      },
       backgroundImage: {
         'newsletter' : "url('../public/images/high5.jpg')",
       }
