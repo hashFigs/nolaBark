@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+
 html,
 body {
   padding: 0;
@@ -29,4 +39,15 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+
+
+
+.section-bg {
+  background-color: #ff8a4c 
+}
+
+.bg-navbar {
+background-color: #fcd9bd
 }

@@ -41,20 +41,18 @@ return(
 <Navbar
   fluid={true}
   rounded={false}
-  className="p-4 !bg-gray-600 "
+  className="p-4 bg-navbar "
 >
   <Navbar.Brand href="/">
     <Image
-        src="/images/cattle.png"
+        src="/images/wiggling-tails-logo.png"
         className="mr-3 h-6 sm:h-9"
-        width={60}
-        height={70}
+        width={140}
+        height={80}
         alt="" 
     />
    
-    <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
-      Barkuskrewe
-    </span>
+  
   </Navbar.Brand>
 
   <div className="flex md:order-2">
@@ -90,49 +88,9 @@ return(
 
     </>
 /*
-<>
-<Navbar
-  fluid={true}
-  rounded={true}
->
-  <Navbar.Brand href="https://flowbite.com/">
-    <img
-      src="https://flowbite.com/docs/images/logo.svg"
-      className="mr-3 h-6 sm:h-9"
-      alt="Flowbite Logo"
-    />
-    <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-      Flowbite
+  <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
+      Wigging Tails
     </span>
-  </Navbar.Brand>
-  <div className="flex md:order-2">
-    <Button>
-      Get startedyy
-    </Button>
-    <Navbar.Toggle />
-  </div>
-  <Navbar.Collapse>
-    <Navbar.Link
-      href="/"
-      
-    >
-      Home
-    </Navbar.Link>
-    <Navbar.Link href="/about">
-      About Us
-    </Navbar.Link>
-    <Navbar.Link href="/services">
-      Services
-    </Navbar.Link>
-    <Navbar.Link href="/blog">
-      Blog
-    </Navbar.Link>
-    <Navbar.Link href="/contact">
-      Contact
-    </Navbar.Link>
-  </Navbar.Collapse>
-</Navbar>
-</>
 */
 )
 }
