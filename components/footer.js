@@ -174,7 +174,11 @@ return(
     </div>
   </div>
 
+<<<<<<< HEAD
   <div class="bg-orange-400 p-6 text-center dark:bg-neutral-700">
+=======
+  <div class=" bg-navbar p-6 text-center dark:bg-neutral-700">
+>>>>>>> main
     <span>© 2023 Copyright:</span>
     <a
       class="font-semibold text-neutral-600 dark:text-neutral-400"

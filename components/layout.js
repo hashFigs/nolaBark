@@ -5,6 +5,10 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Navbar from './nav2';
 import Footer from './footer';
+<<<<<<< HEAD
+=======
+import MainBanner from './home/mainBanner';
+>>>>>>> main
 
 const name = 'Jordi figue';
 export const siteTitle = 'personal portafolio';
