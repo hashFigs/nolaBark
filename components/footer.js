@@ -30,10 +30,10 @@ return(
             <path
               d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
           </svg>
-          7th Ward Pet Services
+          TREME TAILS
         </h6>
         <p>
-          ....
+        
         </p>
       </div>
       <div class="">
@@ -135,7 +135,7 @@ return(
             <path
               d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
           </svg>
-          info@example.com
+          info@tremetails.com
         </p>
        
       <div class="mb-4 flex items-center justify-center md:justify-start">
@@ -182,7 +182,7 @@ return(
     <a
       class="font-semibold text-neutral-600 dark:text-neutral-400"
       href="https://tailwind-elements.com/"
-      > 7th Ward Pet Services</a
+      > TREME TAILS</a
     >
   </div>
 </footer>

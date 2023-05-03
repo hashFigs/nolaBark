@@ -45,15 +45,17 @@ return(
 >
   <Navbar.Brand href="/">
     <Image
-        src="/images/wiggling-tails-logo.png"
-        className="mr-3 h-6 sm:h-9"
-        width={140}
-        height={80}
+        src="/images/cattle.png"
+        className="mr-3 h-9 sm:h-9"
+        width={100}
+        height={120}
         alt="" 
     />
    
-  
+   
+   <h1 class ="text-3xl sm:text-2xl font-extrabold text-gray-600">TREME TAILS</h1>
   </Navbar.Brand>
+  
 
   <div className="flex md:order-2">
 
