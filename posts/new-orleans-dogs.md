@@ -2,6 +2,7 @@
 title: 'Dogs in New Orleans'
 date: '2023-04-03'
 image: 'frenchy.jpg'
+intro: 'New Orleans is a city with a rich history, vibrant culture, and a unique character that is reflected in every aspect of the city, including its dogs. Dogs have always been an integral part of New Orleans, and they are celebrated and cherished by the locals.'
 ---
 
 New Orleans is a city with a rich history, vibrant culture, and a unique character that is reflected in every aspect of the city, including its dogs. Dogs have always been an integral part of New Orleans, and they are celebrated and cherished by the locals. From the famous Mardi Gras parades to the numerous dog-friendly parks and restaurants, dogs are everywhere in New Orleans.

@@ -1,9 +1,7 @@
-import { render } from "react-dom";
-import Layout from "../components/layout";
-import MainBanner from "../components/mainBanner";
-import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import Layout from '../components/layout';
+import MainBanner from '../components/mainBanner';
 import dynamic from 'next/dynamic'
-import ServicesMap from "../components/services-map";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const DynamicMap = dynamic(() => import('../components/services-map'), {
     ssr: false,
@@ -12,20 +10,16 @@ const DynamicMap = dynamic(() => import('../components/services-map'), {
 export default function ServicesArea() {
 
     return(
-        <>
-    <Layout home>
+        <> 
+        <Layout home>
         <MainBanner 
-            title = {" HOME CARE FOR CRITTERS"}
+            title = {" Service Area"}
             image = {"back-walking.jpg"}
             height = {"60"}
             anchor = {"top"}
-            withSvg = {"2"}
         />    
-
-    
-        
-    <DynamicMap />
-    </Layout>
+         <DynamicMap />
+         </Layout>
         </>
     )
 }

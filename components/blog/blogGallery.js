@@ -15,8 +15,9 @@ export default function BlogGallery ({posts}) {
                     </div>
 
                     <div class="grid grid-cols-1 gap-0 md:grid-cols-3 lg:grid-cols-3 py-20">
-                    
-                    {posts.map(({ id, date, title, image }) => (
+
+
+                    {posts.map(({ id, date, title, image, intro }) => (
                             <>
                          
                          <Link href={`/posts/${id}`}>
@@ -38,7 +39,7 @@ export default function BlogGallery ({posts}) {
                                 
                             </div>
                             <p class="text-base text-gray-600 dark:text-gray-200 pb-3">{date}</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">The Vice President, Operations is responsible for planning, directing, and overseeing finance and operations activities in the organization, and ensuring development.</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">{intro}</p>
                         </div>  
                         </Link>
 

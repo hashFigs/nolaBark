@@ -8,6 +8,7 @@ export default function Contact() {
 
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState(''); 
+  const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState(''); 
   const [message, setMessage] = useState(''); 
   
@@ -28,7 +29,7 @@ export default function Contact() {
         body: JSON.stringify({
           email: email,
           fullname: fullname,
-          subject: subject,
+          phone: phone,
           message: message,
                 }),
         headers: {
@@ -49,6 +50,7 @@ export default function Contact() {
         setFullname("");
         setEmail("");
         setMessage("");
+        setPhone("");
         setSubject("");
         return;
       }
@@ -60,6 +62,7 @@ export default function Contact() {
       setEmail("");
       setMessage("");
       setSubject("");
+      setPhone("");
     }
     console.log(fullname, email, subject, message);
   };
@@ -113,21 +116,23 @@ export default function Contact() {
           />
 
           <label
-            htmlFor="subject"
+            htmlFor="phone"
             className="text-gray-500 font-light mt-8 dark:text-gray-50"
           >
-            Subject<span className="text-red-500 dark:text-gray-50">*</span>
+            Phone<span className="text-red-500 dark:text-gray-50">*</span>
           </label>
           
           <input
             type="text"
-            value={subject}
+            value={phone}
             onChange={(e) => {
-              setSubject(e.target.value);
+              setPhone(e.target.value);
             }}
-            name="subject"
+            name="phone"
             className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-green-500 font-light text-gray-500"
           />
+
+         
 
           <label
             htmlFor="message"

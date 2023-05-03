@@ -2,6 +2,7 @@
 title: 'Barkus'
 date: '2023-04-03'
 image: 'mardi-gras.jpg'
+intro: 'Barkus is a beloved Mardi Gras parade in New Orleans that celebrates dogs in all their furry glory Every year, thousands of people gather on the streets of the French Quarter to watch the parade of pooches, all decked out in their finest costumes.' 
 ---
 
 Barkus is a beloved Mardi Gras parade in New Orleans that celebrates dogs in all their furry glory. Every year, thousands of people gather on the streets of the French Quarter to watch the parade of pooches, all decked out in their finest costumes.
