@@ -1,13 +1,12 @@
 import sendgrid from "@sendgrid/mail";
 
-console.log(process.env.SENDGRID_API_KEY)
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 async function sendEmail(req, res) {
  
 
    try {
-     const sended =  await sendgrid.send({
+     await sendgrid.send({
        to: "jordi@hashbrowns.dev", // Your email where you'll receive emails
        from: "jordi@hashbrowns.dev", // your website email address here
        subject: `TREME TAILS CONTACT FORM`,
@@ -43,13 +42,12 @@ async function sendEmail(req, res) {
        </body>
        </html>`,
      });
-     console.log(sended);
-     return{success:true}
    } catch (error) {
-    console.log(error);
+   console.log(error);
      return res.status(error.statusCode || 500).json({ error: error.message });
    }
 
+  return res.status(200).json({ error: "" });
 }
 
 export default sendEmail;
