@@ -66,7 +66,7 @@ return(
         </p>
         <p>
         <Link 
-           href="/House check-ins" 
+           href="/house-check-ins" 
            class="text-neutral-600 dark:text-neutral-200">
           
             House check-ins</Link>
