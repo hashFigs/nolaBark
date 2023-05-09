@@ -43,7 +43,7 @@ export default function LayoutImgTxt ({title, description,  image, height, width
                                 src={imagePath}
                                 height={imgHeight}
                                 width={imgWidth}
-                                alt=""
+                                alt={image}
                             /> 
 
                             {withSvg == "1" &&
