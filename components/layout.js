@@ -8,7 +8,7 @@ import Footer from './footer';
 import MainBanner from './home/mainBanner';
 
 const name = 'Jordi figue';
-export const siteTitle = 'personal portafolio';
+export const siteTitle = 'Treme Tails - per services and dog walking in New Orleans';
 
 export default function Layout({ children, home }) {
   return (
