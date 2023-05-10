@@ -37,18 +37,9 @@ const listItems = description.map((item) =>
         </div>
       </div>
 
-
-
-
-
-
-
-
-        <div className="benefits">
-           
-            
-          
-        </div>
+      <div className="benefits">
+               
+      </div>
     
         </>
     )

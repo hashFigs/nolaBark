@@ -20,7 +20,7 @@ export default function ServicesBanner() {
                 <ItemCard
                     title= {"Pet Sitting"}
                     description = { "We provide pet care services that cater to a variety of animals including cats, birds, lizards, and guinea pigs."}
-                    image={"small-dog2.jpg"}
+                    image={"house3.jpg"}
                     link={"/pet-sitting"}
                 />      
                 </div>
@@ -47,7 +47,7 @@ export default function ServicesBanner() {
                 <ItemCard
                 title= {"House check-ins"}
                 description = { "Our pet sitters have extensive experience in house check-ins, ensuring that your home is safe and secure. We also offer additional services such as watering plants, feeding fish, signing for packages, and collecting mail to provide you with complete peace of mind while you're away."}
-                image={"energetic-dog.jpg"}
+                image={"house1.jpg"}
                 link={"/house-check-ins"}
                 /> 
                 </div>

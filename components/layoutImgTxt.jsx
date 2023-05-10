@@ -8,13 +8,13 @@ export default function LayoutImgTxt ({title, description,  image, height, width
 
  
     const imagePath = `/images/${image}`
-    const imageClass = roundedBorder || 'rounded-md'
+    const imageClass = roundedBorder || 'rounded-xl'
     const imgHeight = height || 300
     const imgWidth = width || 400
     const linkTextIn = linkText || null
     const linkUrlIn = linkUrl || '/login'
     const sectionBg = background || 'bg-white'  
-    const roundedBorderIn = roundedBorder || 'rounded-md'
+    const roundedBorderIn = roundedBorder || 'rounded-xl'
     
     const svgColor = (sectionBg) => {
         if(sectionBg === 'bg-white'){
