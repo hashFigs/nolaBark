@@ -4,7 +4,7 @@ export default function AboutUs() {
   return (
     <>
     <section class="container space-y-4 mx-auto px-6 p-10">
-      <p className="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">Welcome to 7th ward Pet Services, your trusted pet walking service in the heart of the city! 
+      <p className="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">Welcome to Treme Tails Pet Services, your trusted pet walking service in the heart of the city! 
         We understand that your furry family member is a beloved part of your life and deserves the best care possible. 
         Thats why we &apos; re dedicated to providing reliable, compassionate, and personalized pet walking services that meet the individual 
         needs of each pet and their owner.</p>

@@ -12,7 +12,7 @@ export default function DogWalkings() {
         <Layout home>
         <MainBanner 
             title = {" Trust your pet with the best"}
-            image = {"back-walking.jpg"}
+            image = {"collie.jpg"}
             height = {"60"}
             anchor = {"top"}
         />     

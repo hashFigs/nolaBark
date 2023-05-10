@@ -9,7 +9,7 @@ return(
     <Layout home>
         <MainBanner 
             title = {"ABOUT US"}
-            image = {"back-walking.jpg"}
+            image = {"onbridge.jpg"}
             height = {"60"}
             anchor = {"top"}
             withSvg = { "1" }

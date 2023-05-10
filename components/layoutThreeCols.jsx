@@ -11,8 +11,8 @@ export default function LayoutThreeCols ({title1, title2, title3,
                                         linkUrl1, linkUrl2, linkUrl3}){
 
     const imagePath1 = `/images/${image1}`
-    const imagePath2 = `/images/${image1}`
-    const imagePath3 = `/images/${image1}`
+    const imagePath2 = `/images/${image2}`
+    const imagePath3 = `/images/${image3}`
     const imageClass = ''
     const imgHeight = height || 300
     const imgWidth = width || 400
