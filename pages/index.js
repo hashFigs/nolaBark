@@ -4,6 +4,7 @@ import Services from '../components/home/servicesBanner';
 import Tracking from '../components/home/tracking';
 import BlogGallery from '../components/blog/blogGallery';
 import NewsLetter from '../components/newsLetter';
+import MailChimp from '../components/mailchimp';
 
 import { getSortedPostsData } from '../lib/posts';
 
@@ -45,7 +46,7 @@ export default function Home({ allPostsData }) {
         <Services />
         <Tracking />
         <BlogGallery posts={allPostsData}/>
-        <NewsLetter/>
+        <MailChimp/>
       
       </Layout>
     </>
