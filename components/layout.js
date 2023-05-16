@@ -40,6 +40,4 @@ export default function Layout({ children, home }) {
     </>
   );
 }
-//      <script src="https://unpkg.com/flowbite@1.1.1/dist/flowbite.js"></script>
 
-//  <link rel="stylesheet" href="//unpkg.com/flowbite@1.1.1/dist/flowbite.min.css" />
