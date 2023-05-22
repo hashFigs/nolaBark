@@ -18,7 +18,7 @@ export default async function handler(req, res) {
                 { email: email },
                 );
             
-            if (user) throw (res.status(405).json({
+            if (user) return (res.status(405).json({
                 Status: "OK",
                 ErrorCode: "01",
                 Description:"invalid email"

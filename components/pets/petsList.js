@@ -3,7 +3,6 @@ import utilStyles from '../../styles/utils.module.css';
 
 export default function PetsList({petsList}) {
 
-  //const petsList = [{"name": "Fido", "size": "small"}, {"name": "Fido2", "size": "small"}] 
       return (
       <div>
         { petsList.map((pet) => {

@@ -3,10 +3,14 @@ import Layout from "../components/layout";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import styles from "../components/layout.module.css";
+import Link from "next/link";
+import { set } from "date-fns";
 
 export default function Login({ allPostsData }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [visibility, setVisibility] = useState("invisible");
+  const [errorMessages, setErrorMessages] = useState("");
 
   const router = useRouter();
   const handleSubmit = async (e) => {
@@ -19,38 +23,22 @@ export default function Login({ allPostsData }) {
     });
 
     if (result?.error) {
+      setVisibility("p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 justify-center");
+      setErrorMessages("Please provide a valid username and password");
       console.log("ERROR", result);
     } else {
       router.push("/dashboard");
     }
-    /*
-
-    try {
-		const res = await fetch("api/users/login", {
-            method: "POST",
-            body: JSON.stringify({email:username, password: password}),
-            headers: {
-                "Content-Type": "application/json",
-             },
-        });
-		const data = await res.json();
-		console.log("DAta!!", data);
-    
-    if (res?.error) {
-      console.log("ERROR")
-      router.push("/api/auth/signin");
-     } else {
-       router.push("/dashboard");
-     }
-
-	} catch (err) {
-		console.log(err);
-	}
-  */
+  
   };
 
   return (
     <Layout home>
+
+      <div class={visibility} role="alert">
+        <span class="font-medium">{errorMessages}</span> 
+      </div>
+      
       <div className={styles.container}>
         <form
           onSubmit={handleSubmit}
@@ -98,7 +86,26 @@ export default function Login({ allPostsData }) {
             >
               Log In
             </button>
+            
+            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                Don’t have an account yet? 
+                
+                <Link href="/signup" className="font-medium text-primary-600 hover:underline dark:text-primary-500">
+                  Sign up
+                </Link>
+
+               
+            </p>
+
+
+              
+
+
           </div>
+                   
+            
+          
+
         </form>
       </div>
     </Layout>

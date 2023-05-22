@@ -20,11 +20,17 @@ export default function Pets() {
   
   useEffect(() => {
     
+    console.log("User", user_final?.token)
+
+
     const fetchUserPets =async () => {
+      const token = user_final.token
+      console.log("Session", session)
       const res = await fetch("/api/pets/getpets", {
         method: "GET",
         headers: {
              "Content-Type": "application/json",
+              "Authorization" : `Bearer ${token}`,  
 
              },
             });
@@ -38,17 +44,20 @@ export default function Pets() {
 
 
 const savePet = async (e) => {
+  const token = "holaTokenn"
   try {
 		const res = await fetch("/api/pets/addpet", {
             method: "POST",
             body: JSON.stringify({name:petName, size: petSize, userId: user_final?.userId}),
             headers: {
                 "Content-Type": "application/json",
+                "Authorization" : `Bearer ${token}`,  
                 
              },
         });
 		const data = await res.json();
 		console.log(data);
+    setIsOpen(false);
 	} catch (err) {
 		console.log(err);
 	}
