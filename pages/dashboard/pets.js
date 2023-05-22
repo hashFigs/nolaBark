@@ -20,12 +20,9 @@ export default function Pets() {
   
   useEffect(() => {
     
-    console.log("User", user_final?.token)
-
-
     const fetchUserPets =async () => {
       const token = user_final.token
-      console.log("Session", session)
+   
       const res = await fetch("/api/pets/getpets", {
         method: "GET",
         headers: {
@@ -34,6 +31,7 @@ export default function Pets() {
 
              },
             });
+      console.log("res", res)      
       const data = await res.json();     
       setPets(data);
     }
@@ -44,7 +42,7 @@ export default function Pets() {
 
 
 const savePet = async (e) => {
-  const token = "holaTokenn"
+  const token = user_final.token
   try {
 		const res = await fetch("/api/pets/addpet", {
             method: "POST",
@@ -105,14 +103,6 @@ return(
     </div>    
    <PetsList petsList ={pets} />  
 
-    <div class="grid grid-cols-5 gap-4 mb-4">
-      
-       
-        <p> {`email: ${user_final?.email}`}</p>
-        <p> {`userId: ${user_final?.userId}`}</p>
-        <p> {`token: ${user_final?.token}`}</p>
-      
-    </div>    
 
     <div>
          <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles} >

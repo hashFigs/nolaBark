@@ -26,15 +26,28 @@ export default async function handler(req, res) {
         
         case "POST": //User Register
             
-            const { name, breathe, size, userId  } = req.body;
-            const { token } = req.headers;
+            const { name, breathe, size } = req.body;
+
+            let token = req.headers.authorization.split(" ")[1];
+
+            console.log("Token", token)
+            
+            let session = await db.collection("session").findOne({
+                token: token
+           })
+            
+          console.log("session", session); 
+           //   let userId = user._id.toString();
+            
+
             console.log("Body", req.body);
             console.log("HEaders", req.headers);
+
             let pet = await db.collection("pets").insertOne({
                 name: name, 
                 breathe: breathe, 
                 size: size,
-                userId: userId
+                userId: session.userId
       })
 
             

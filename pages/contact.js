@@ -39,7 +39,6 @@ export default function Contact() {
       });
 
       const { error } = await res.json();
-//      const error = false;  
       if (error) {
         console.log(error);
         setShowSuccessMessage(false);

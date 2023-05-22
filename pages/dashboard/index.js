@@ -6,6 +6,9 @@ export default function Index() {
     const { data: session } = useSession()
     const user = session?.user;
     const user_final = user?.user;
+    
+
+
     if(!user) {
         return(
         <h1> Please log in</h1>
