@@ -11,7 +11,7 @@ export default function ServicesBanner() {
            
             <div class="container mx-auto ">
 
-            <h1 className="text-center text-3xl py-10 font-semibold"> OUR SERVICES</h1>
+            <h2 className="text-center text-3xl py-10 font-semibold"> OUR SERVICES</h2>
             <h2 className="text-center text-2xl text-gray-600 dark:text-gray-200 leading-6 font-normal ">We offer a variety of services. Here are our most popular:</h2>
       
             
