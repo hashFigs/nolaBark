@@ -56,6 +56,7 @@ export default function Home({ allPostsData }) {
 
         <Head>
           <title>{siteTitle}</title>
+          <meta name="keywords" content="dog walking, New Orleans, pet services, walking the dog, walk in new orleans, 7 ward, bayou st john, marigny, bywater  "/>
         </Head>
 
         <HomeBanner

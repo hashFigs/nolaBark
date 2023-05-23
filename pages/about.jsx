@@ -12,6 +12,8 @@ export default function About({ allPostsData }) {
     <Layout home>
     <Head>
           <title>{siteTitle}</title>
+          <meta name="keywords" content="trusted pet services, trust dog walking, new orleans, boarding dogs, dog services "/>
+
     </Head>
 
         <MainBanner 
