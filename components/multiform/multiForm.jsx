@@ -1,6 +1,8 @@
 import Location from './location'
 import Petinfo from './petinfo'
 import { useState } from 'react'
+import {  useSession } from "next-auth/react"
+
 
 
 export default function MultiForm() {
@@ -17,14 +19,35 @@ const [formData, setFormData] = useState({
   petBreed: '',
 });
 
-const handleNext = async (e) => {
+const { data: session } = useSession()
+const user = session?.user;
+const user_final = user?.user;
+
+const handleNextSubmit = async (e) => {
     e.preventDefault();
-    setPage(page + 1);
+    
+    if (page === 0) {
+      setPage(page + 1);
+      console.log(formData)
+      } 
+  
+    else {
+      console.log(formData);
+      const token = user_final.token
+      const res = await fetch("/api/pets/addpet", {
+        method: "POST",
+            body: JSON.stringify({name:formData.petName, size: formData.petSize, breed: formData.petBreed, userId: user_final?.userId}),
+            headers: {
+                "Content-Type": "application/json",
+            "Authorization" : `Bearer ${token}`,  
+            
+             },
+    });
+      const data = await res.json();
+      console.log(data);
+    }  
 } 
-const handlePrev = async (e) => {
-  e.preventDefault();
-  setPage(page - 1);
-} 
+
 
 const conditionalComponent = () => {
   switch (page) {
@@ -50,19 +73,17 @@ const conditionalComponent = () => {
           <div class="w-1/2">
           
             <button
-                  
-                  disabled={page === 1}
                   className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" 
-                  onClick={handleNext}>
-                  Next
+                  onClick={handleNextSubmit}>
+                  { page === 0  ? "Next" : "Submit" }
             </button>
             
-            <button 
-                  disabled={page === 0}
+            { page > 0 && <button 
                   className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"  
-                  onClick={handlePrev}>
+                  onClick={() => setPage(page - 1)}>
                   Prev
             </button>
+           }
               
           </div>
          </div>

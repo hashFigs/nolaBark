@@ -5,9 +5,9 @@ export default function PetInfo({formData, setFormData}) {
 
     return(
         <>
-     <h2> Pet Information</h2>   
+       
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        
+    <h2> Pet Information</h2> 
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Pet Name
@@ -76,7 +76,18 @@ export default function PetInfo({formData, setFormData}) {
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Breed Type
             </label>
-            <select class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" id="breed" type="text">
+            <select 
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+            id="breed" 
+            type="text"
+            onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  petBreed: e.target.value,
+                })
+              }}
+              value={formData.petBreed}>
+                
                 <option>Labrador Retriever</option>
                 <option>Golden Retriever</option>
                 <option>Beagle</option>
