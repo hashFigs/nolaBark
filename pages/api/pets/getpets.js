@@ -12,19 +12,28 @@ export default async function handler(req, res) {
     switch (method) {
         
         case "GET": //get pets
-            
-           // const { name, breathe } = req.body;
-            
+            
             console.log("HEaders", req.headers);
-            
-            let pet = await db.collection("pets").findOne({
-                userId: "641bd832abff3bf1fc454cf7"
-           })
 
-        res.status(200).json([
-            { _id:123, name: "Fido", size: "small", breathe: "air", _userId: "641bd832abff3bf1fc454cf7"},
-            { _id:12333, name: "Fi434do", size: "small", breathe: "air", _userId: "641bd832abff3bf1fc454cf7"}
-        ]);   
+            let token = req.headers.authorization.split(" ")[1];
+            
+            let session = await db.collection("session").findOne({
+                token: token
+           })
+            
+           let _userId = session.userId;
+            
+            
+           console.log("userId", _userId);
+
+            let pets = await db.collection("pets").find({
+                userId: _userId
+           })   
+            pets = await pets.toArray();
+            console.log("pets", pets);
+
+       
+       res.status(200).json(pets);   
           
          break;
         default:

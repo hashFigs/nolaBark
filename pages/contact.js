@@ -2,7 +2,7 @@
 import React, {useState} from "react";
 import Layout from "../components/layout"
 import styles from '../components/layout.module.css';
-
+import Head from "next/head";
 
 export default function Contact() {
 
@@ -39,7 +39,6 @@ export default function Contact() {
       });
 
       const { error } = await res.json();
-//      const error = false;  
       if (error) {
         console.log(error);
         setShowSuccessMessage(false);
@@ -64,13 +63,15 @@ export default function Contact() {
       setSubject("");
       setPhone("");
     }
-    console.log(fullname, email, subject, message);
   };
   
-  
+  const siteTitle = 'Contact Us | Treme Tails';
   return (
       <>
       <Layout >   
+      <Head>
+          <title>{siteTitle}</title>
+      </Head>
       <div className={styles.container}>   
 
          <form

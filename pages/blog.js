@@ -1,9 +1,6 @@
 import Layout from "../components/layout"
 import { getSortedPostsData } from "../lib/posts";
-import utilStyles from '../styles/utils.module.css';
-import Link from "next/link";
-import styles from '../components/layout.module.css';
-import Image from 'next/image'
+import Head from "next/head";
 import BlogGallery from "../components/blog/blogGallery";
 
 
@@ -21,9 +18,13 @@ export async function getStaticProps() {
   
 
 export default function Blog({ allPostsData }) {
+  const siteTitle = 'Blog | Treme Tails';
 return(
     <>
     <Layout home>
+    <Head>
+          <title>{siteTitle}</title>
+    </Head>
       <BlogGallery
         posts={allPostsData}
         />
