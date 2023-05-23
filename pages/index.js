@@ -7,10 +7,12 @@ import NewsLetter from '../components/newsLetter';
 import MailChimp from '../components/mailchimp';
 
 import { getSortedPostsData } from '../lib/posts';
-
+import { useEffect } from 'react';
 import { useSession, signIn, signOut } from "next-auth/react"
 import MainBanner from '../components/mainBanner';
 import HomeBanner from '../components/homeBanner';
+
+import * as ga from '../lib/ga'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -27,6 +29,13 @@ export default function Home({ allPostsData }) {
   const { data: session } = useSession()
   const user = session?.user;
   
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+
+
+
   return(
       <>
      
