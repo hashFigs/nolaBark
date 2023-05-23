@@ -54,6 +54,10 @@ export default function Home({ allPostsData }) {
 
         <Head>
           <title>{siteTitle}</title>
+          <meta
+          name="description"
+          content="Pet care and Dog walking Services in New Orleans"
+          />
           <meta name="keywords" content="dog walking, New Orleans, pet services, walking the dog, walk in new orleans, 7 ward, bayou st john, marigny, bywater  "/>
           <link rel="canonical" href="https://tremetails.com" />
         </Head>

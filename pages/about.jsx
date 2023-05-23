@@ -6,7 +6,7 @@ import Head from "next/head";
 
 export default function About({ allPostsData }) {
 
-    const siteTitle = 'About Us | tremeloafrica.com';
+    const siteTitle = 'About Us | tremetails.com';
     return(
     <>
     <Layout home>
