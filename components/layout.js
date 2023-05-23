@@ -17,7 +17,7 @@ export default function Layout({ children, home }) {
       <Head>
     
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/cattle.ico" />
         <meta
           name="description"
           content="Pet care and Dog walking Services in New Orleans"
