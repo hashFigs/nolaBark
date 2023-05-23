@@ -1,13 +1,20 @@
-import Layout from "../components/layout";
+import Layout, { siteTitle } from "../components/layout";
 import styles from '../components/layout.module.css';
 import AboutUs from '../components/about/aboutus.js';
 import MainBanner from "../components/mainBanner";
 import LayoutImgTxt from "../components/layoutImgTxt";
+import Head from "next/head";
 
 export default function About({ allPostsData }) {
+    
+const siteTitle = 'In home boarding | Treme Tails'
+
 return(
     <>
     <Layout home>
+     <Head>
+            <title>{siteTitle}</title>
+     </Head>
         <MainBanner 
             title = {" IN-HOME SLEEPOVER & BOARDING "}
             image = {"back-walking.jpg"}

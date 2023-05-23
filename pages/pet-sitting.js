@@ -1,13 +1,19 @@
-import { render } from "react-dom";
 import Layout from "../components/layout";
 import MainBanner from "../components/mainBanner";
 import LayoutImgTxt from "../components/layoutImgTxt";
+import Head from "next/head";
+
 
 export default function PetSitting() {
-
+    
+    const siteTitle = 'Pet Sitting | Treme Tails';
+    
     return(
         <>
     <Layout home>
+    <Head>
+          <title>{siteTitle}</title>
+    </Head>
         <MainBanner 
             title = {" HOME CARE FOR CRITTERS"}
             image = {"house2.jpg"}

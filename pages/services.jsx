@@ -1,14 +1,18 @@
 import Layout from "../components/layout";
-import DogWalking from "../components/services/dog-walking";
+
 import MainBanner from "../components/mainBanner";
-import Benefits from "../components/services/benefits";
+import Head from "next/head";
 import ServicesBanner from "../components/home/servicesBanner";
 
 export default function Services({ allPostsData }) {
+  const siteTitle = 'Services | tremetails.com';
   return (
     <>
       
       <Layout home> 
+      <Head>
+          <title>{siteTitle}</title>
+      </Head>
         <MainBanner 
             title = {"SAFE. TRUSTED. LOCAL"}
             image = {"wet_mouse.jpg"}

@@ -3,13 +3,17 @@ import Layout from "../components/layout";
 import MainBanner from "../components/mainBanner";
 import DogWalking from "../components/services/dog-walking";
 import Benefits from "../components/services/benefits";
+import Head from "next/head";
+
 export default function DogWalkings() {
 
+    const siteTitle = "Dog Walking | Treme Tails";
     return(
         <>
-
-       
         <Layout home>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>    
         <MainBanner 
             title = {" Trust your pet with the best"}
             image = {"collie.jpg"}
