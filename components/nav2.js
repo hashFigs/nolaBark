@@ -53,7 +53,7 @@ return(
     />
    
    
-   <h1 class ="text-3xl sm:text-2xl font-extrabold text-gray-600">TREME TAILS</h1>
+   <h2 class ="text-3xl sm:text-2xl font-extrabold text-gray-600">TREME TAILS</h2>
   </Navbar.Brand>
   
 

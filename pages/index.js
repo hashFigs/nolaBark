@@ -3,7 +3,6 @@ import Layout, { siteTitle } from '../components/layout';
 import Services from '../components/home/servicesBanner';
 import Tracking from '../components/home/tracking';
 import BlogGallery from '../components/blog/blogGallery';
-import NewsLetter from '../components/newsLetter';
 import MailChimp from '../components/mailchimp';
 import { useRouter } from 'next/router'
 
@@ -11,7 +10,6 @@ import { useRouter } from 'next/router'
 import { getSortedPostsData } from '../lib/posts';
 import { useEffect } from 'react';
 import { useSession, signIn, signOut } from "next-auth/react"
-import MainBanner from '../components/mainBanner';
 import HomeBanner from '../components/homeBanner';
 
 import * as ga from '../lib/ga'
