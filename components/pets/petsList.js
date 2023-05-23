@@ -1,8 +1,34 @@
 import Image from "next/image";
+import PetCard from "./petCard";
 import utilStyles from '../../styles/utils.module.css';
 export default function PetsList({petsList}) {
 
-  //const petsList = [{"name": "Fido", "size": "small"}, {"name": "Fido2", "size": "small"}] 
+      return (
+      <div>
+        { petsList.map((pet) => {
+          return (
+            <>
+              <PetCard 
+                  name={pet.name} 
+                  breed={pet.breed}
+                  image={'cattle.png'}/>       
+            </>
+                  );
+          })
+        }
+     </div>
+      )
+  };
+
+  
+
+
+  /*
+  import Image from "next/image";
+import PetCard from "./petCard";
+import utilStyles from '../../styles/utils.module.css';
+export default function PetsList({petsList}) {
+
       return (
       <div>
         { petsList.map((pet) => {
@@ -26,7 +52,7 @@ export default function PetsList({petsList}) {
                 <h5 class="  mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{pet.name}</h5>
 
                 <p className="float-fight">{`Pet Size: ${pet.size}`}</p>
-                <p className="float-fight">{`Pet Breathe: ${pet.breathe}`}</p>
+                <p className="float-fight">{`Pet Breed: ${pet.breed}`}</p>
                 <p className="float-fight">{`Pet Size: ${pet.size}`}</p>
                 </div>
             </div> 
@@ -40,4 +66,4 @@ export default function PetsList({petsList}) {
   };
 
 
-  
+  */
