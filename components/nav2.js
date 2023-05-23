@@ -49,7 +49,7 @@ return(
         className="mr-3 h-9 sm:h-9"
         width={100}
         height={120}
-        alt="" 
+        alt="logo" 
     />
    
    

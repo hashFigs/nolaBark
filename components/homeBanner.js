@@ -16,7 +16,7 @@ export default function HomeBanner({image, title, height, anchor}) {
           src={imagePath}
           height={500}
           width={1000}
-          alt=""
+          alt={image}
           />
         
         

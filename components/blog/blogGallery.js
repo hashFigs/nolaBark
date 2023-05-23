@@ -30,7 +30,7 @@ export default function BlogGallery ({posts}) {
                                     src={`/images/${image}`}
                                     height={"400"}
                                     width={"400"}
-                                    alt=""
+                                    alt={image}
                                 />  
                             </div>
                             
