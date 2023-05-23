@@ -1,7 +1,4 @@
-import { users } from "../../../data";
 import clientPromise from "../../../lib/mongodb";
-
-
 
 
 export default async function handler(req, res) {
@@ -12,9 +9,9 @@ export default async function handler(req, res) {
 
     switch (method) {
         
-        case "POST": //User Register
+        case "POST": //Adding a new  Location
             
-            const { name, breed, size } = req.body;
+            const { address, city, zip  } = req.body;
 
             let token = req.headers.authorization.split(" ")[1];
 
@@ -23,18 +20,11 @@ export default async function handler(req, res) {
             let session = await db.collection("session").findOne({
                 token: token
            })
-            
-          console.log("session", session); 
-           //   let userId = user._id.toString();
-            
-
-            console.log("Body", req.body);
-            console.log("HEaders", req.headers);
-
-            let pet = await db.collection("pets").insertOne({
-                name: name, 
-                breed: breed, 
-                size: size,
+          
+            let pet = await db.collection("locations").insertOne({
+                address: address, 
+                city: city,
+                zip: zip,
                 userId: session.userId,
                 createdAt:  new Date( Date.now()) ,
                 updatedAt: new Date( Date.now()) ,
