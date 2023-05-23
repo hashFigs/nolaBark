@@ -11,21 +11,23 @@ export default function PetInfo() {
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Pet Name
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="petName" type="text" placeholder="titus"/>
+            
+            <input class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" id="petName" type="text" placeholder="titus"/>
+            
         </div>
 
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Pet Age
             </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="age" type="text" placeholder="4"/>
+            <input class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" id="age" type="text" placeholder="4"/>
         </div>
 
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Size
             </label>
-            <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="breed" type="text">
+            <select class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" id="breed" type="text">
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
@@ -39,7 +41,7 @@ export default function PetInfo() {
         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Breed Type
             </label>
-            <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="breed" type="text">
+            <select class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" id="breed" type="text">
                 <option>Labrador Retriever</option>
                 <option>Golden Retriever</option>
                 <option>Beagle</option>
