@@ -34,12 +34,25 @@ const handleNextSubmit = async (e) => {
     else {
       console.log(formData);
       const token = user_final.token
-      const res = await fetch("/api/pets/addpet", {
+      const res = await fetch("/api/users/initialsetup", {
         method: "POST",
-            body: JSON.stringify({name:formData.petName, size: formData.petSize, breed: formData.petBreed, userId: user_final?.userId}),
+            body: JSON.stringify(
+                  {
+                    name:formData.petName,
+                    lastname: formData.lastname, 
+                    streetAdress: formData.streetAdress,
+                    city: formData.city,
+                    zipCode: formData.zipCode,
+                    petName: formData.petName,
+                    petAge: formData.petAge,
+                    size: formData.petSize, 
+                    breed: formData.petBreed, 
+                    userId: user_final?.userId
+                  }
+                ),
             headers: {
                 "Content-Type": "application/json",
-            "Authorization" : `Bearer ${token}`,  
+                "Authorization" : `Bearer ${token}`,  
             
              },
     });

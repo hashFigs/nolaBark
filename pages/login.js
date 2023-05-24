@@ -13,6 +13,7 @@ export default function Login({ allPostsData }) {
   const [errorMessages, setErrorMessages] = useState("");
 
   const router = useRouter();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -27,6 +28,7 @@ export default function Login({ allPostsData }) {
       setErrorMessages("Please provide a valid username and password");
       console.log("ERROR", result);
     } else {
+      
       router.push("/dashboard");
     }
   
