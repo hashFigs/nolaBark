@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         
         case "POST": //User Register
             
-            const { name, lastname, streetAdress, zipCode, petBreed, petSize, petName, petAge } = req.body;
+            const { name, lastname, streetAdress, city, zipCode, breed, size, petName, petAge } = req.body;
 
             let token = req.headers.authorization.split(" ")[1];
 
@@ -20,21 +20,19 @@ export default async function handler(req, res) {
             let session = await db.collection("session").findOne({
                 token: token
            })
-            
-  
+             
             let pet = await db.collection("pets").insertOne({
                 name: petName, 
-                breed: petBreed, 
-                size: petSize,
+                breed: breed, 
+                size: size,
                 userId: session.userId,
                 createdAt:  new Date( Date.now()) ,
                 updatedAt: new Date( Date.now()) ,
             })
             
             let location = await db.collection("locations").insertOne({
-                address: petName, 
-                city: petBreed, 
-                size: petSize,
+                address: streetAdress, 
+                city: city, 
                 zip: zipCode,
                 userId: session.userId,
                 createdAt:  new Date( Date.now()) ,

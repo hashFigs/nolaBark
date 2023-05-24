@@ -12,8 +12,8 @@ export default function PetsList({petsList}) {
                   name={pet.name} 
                   breed={pet.breed}
                   image={'cattle.png'}/>       
-            </>
-                  );
+               </>
+              );
           })
         }
      </div>
