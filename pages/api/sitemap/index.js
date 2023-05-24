@@ -61,6 +61,10 @@ export default function handler(req, res) {
         <loc>https://tremetails.com/posts/barkus-mardi-gras</loc>
         <lastmod>2023-05-24</lastmod>
       </url>
+      <url>
+        <loc>https://tremetails.com/robots.txt</loc>
+        <lastmod>2023-05-24</lastmod>
+      </url>
       </urlset>`
   
     res.end(xml)
