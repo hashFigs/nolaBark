@@ -3,13 +3,13 @@ import Link from "next/link"
 import {  useSession } from "next-auth/react"
 
 
-export default function PetCard({name, size, breed, image, petId}) {
+export default function PetCard({name, size, breed, image, petId, setPets}) {
     const imagePath = `/images/${image}`
     const { data: session } = useSession()
     const user = session?.user;
     const user_final = user?.user;
 
-    const removePet = () => {
+    const removePet = async () => {
         const token = user_final.token
 
 
@@ -22,7 +22,19 @@ export default function PetCard({name, size, breed, image, petId}) {
 
                      },
                     });
-      console.log("petRemoved", petRemoved)              
+
+      console.log("petRemoved", petRemoved)  
+
+        const res = await fetch("/api/pets/getpets", {
+            method: "GET",
+            headers: {
+                 "Content-Type": "application/json",
+                "Authorization" : `Bearer ${token}`,  
+
+                 },
+                });
+        const data = await res.json();     
+       // setPets(data);            
     }
 
 

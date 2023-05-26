@@ -3,7 +3,7 @@ import { signOut, useSession } from "next-auth/react"
 import { useState, useEffect } from "react";
 import { add } from "date-fns";
 import MultiForm from '../../components/multiform/multiForm'
-
+import PersonalInfo from "./personalInfo";
 
 
 export default function Index() {
@@ -29,27 +29,21 @@ export default function Index() {
                   "Authorization" : `Bearer ${token}`,  
     
                  },
-                });
-          console.log("res", res)      
+                });  
     
           const data = await res.json();  
-
-          console.log("data", data)
           
           setLocations(data);
           setAddress(data[0].address)
           setCity(data[0].city)
           setZip(data[0].zip)      
-          console.log("locations", locations)
         }
         
         fetchUserLocations()
         .catch(console.error);
       }, [])
       
-      console.log("address", address);
 
-      
       const conditionalComponent = () => {
         if(!address){
             return(
@@ -59,16 +53,11 @@ export default function Index() {
           }else{
             return(
                 <>
-        <h1> there is a location</h1>
         </> 
             )
         }
       }
        
-
-
-      
-   
     
     if(!user) {
         return(
@@ -81,9 +70,6 @@ export default function Index() {
             <LayoutDashboard home> </LayoutDashboard>
             
 
-
-
-
             <div class="p-4 sm:ml-64">
             <div class="grid grid-cols-6 gap-4">
                 <div class="col-end-7 col-span-2 ...">
@@ -95,8 +81,9 @@ export default function Index() {
 
                 {conditionalComponent()} 
                 
-                <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-                   <h1>Welcome to your dashboard</h1>
+                <div class="p-4">
+                   
+                   <PersonalInfo user={user} city={city} address={address} zip={zip}/>
                     
                 </div>
             </div>

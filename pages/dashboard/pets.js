@@ -100,7 +100,7 @@ return(
       
       
     </div>    
-   <PetsList petsList ={pets} />  
+   <PetsList petsList ={pets} setPet ={setPets}/>  
 
 
     <div>

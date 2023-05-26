@@ -3,7 +3,7 @@ import PetCard from "./petCard";
 import utilStyles from '../../styles/utils.module.css';
 
 
-export default function PetsList({petsList}) {
+export default function PetsList({petsList, setPet}) {
       return (
       <div>
         { petsList.map((pet) => {
@@ -13,7 +13,8 @@ export default function PetsList({petsList}) {
                   name={pet.name} 
                   breed={pet.breed}
                   image={'cattle.png'}
-                  petId={pet._id}/>       
+                  petId={pet._id}
+                  setPet={setPet}/>       
                </>
               );
           })
