@@ -1,5 +1,7 @@
 import { users } from "../../../data";
 import clientPromise from "../../../lib/mongodb";
+import { ObjectId } from "bson"
+import { MongoClient } from "mongodb";
 
 export default async function handler(req, res) {
 
@@ -21,7 +23,8 @@ export default async function handler(req, res) {
                 token: token
            })
              
-            let pet = await db.collection("pets").insertOne({
+           //insert a new pet   
+           let pet = await db.collection("pets").insertOne({
                 name: petName, 
                 breed: breed, 
                 size: size,
@@ -30,6 +33,8 @@ export default async function handler(req, res) {
                 updatedAt: new Date( Date.now()) ,
             })
             
+            
+            //insert a new location
             let location = await db.collection("locations").insertOne({
                 address: streetAdress, 
                 city: city, 
@@ -38,9 +43,21 @@ export default async function handler(req, res) {
                 createdAt:  new Date( Date.now()) ,
                 updatedAt: new Date( Date.now()) ,
             })
+             
 
-            
-        res.status(200).json({pet, location});   
+            //update user name and surname
+
+            const filter = { _id: new ObjectId(`${session.userId}`) };
+            const updateDoc = {
+                $set: {
+                    name: name,
+                    surname: lastname,    
+                },
+                };
+
+            let userResult = await db.collection("users").updateOne(filter, updateDoc);
+            console.log(userResult)
+        res.status(200).json({pet, location, userResult});   
           
          break;
         default:

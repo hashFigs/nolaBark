@@ -30,7 +30,9 @@ export default async function handler(req, res) {
              user = await db.collection("users").insertOne({
              email: email, 
              password: md5(password),
-             urlVeriToken: urlVeriToken  
+             urlVeriToken: urlVeriToken,
+             createdAt:  new Date( Date.now()) ,
+             updatedAt: new Date( Date.now()) ,  
              
            })
         }    

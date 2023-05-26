@@ -31,10 +31,8 @@ export default function Pets() {
 
              },
             });
-      console.log("res", res)      
       const data = await res.json();     
       setPets(data);
-      console.log("pets", pets)
     }
     
     fetchUserPets()
