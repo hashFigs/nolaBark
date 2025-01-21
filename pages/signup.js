@@ -15,12 +15,14 @@ export default function Signup() {
     e.preventDefault();
     
     try {
+
+   
 		const res = await fetch("api/users/register", {
-            method: "POST",
-            body: JSON.stringify({email:username, password: password}),
-            headers: {
-                "Content-Type": "application/json",
-             },
+            method: "POST", 
+            body: JSON.stringify({email:username, password: password}),
+            headers: {  
+                "Content-Type": "application/json",
+              },
         });
 		const data = await res.json();
 		console.log("DAta!!", data);

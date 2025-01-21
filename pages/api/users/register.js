@@ -1,4 +1,3 @@
-import { users } from "../../../data";
 import clientPromise from "../../../lib/mongodb";
 import md5 from "md5";
 import jwt from "jsonwebtoken"
@@ -7,17 +6,21 @@ import jwt from "jsonwebtoken"
 export default async function handler(req, res) {
     const { method } = req;
     const client = await clientPromise;
-    const db = client.db("test");
+    const db = client.db("nolabark");
 
     switch (method) {
         
-        case "POST": //User Register
-          const { email, password } = req.body;
-                   
+        case "POST": //User Register
+            const { email, password } = req.body;
+
+            console.log("insnide register %api")
+
             let user = await db.collection("users").findOne(
                 { email: email },
                 );
             
+            console.log(user)
+
             if (user) return (res.status(405).json({
                 Status: "OK",
                 ErrorCode: "01",
@@ -25,7 +28,7 @@ export default async function handler(req, res) {
                  
             }));
             else {
-            const urlVeriToken = jwt.sign({ user: email.toString() }, process.env.TOKEN_SECRET);
+            const urlVeriToken = jwt.sign({ user: email.toString() }, process.env.NEXTAUTH_SECRET);
 
              user = await db.collection("users").insertOne({
              email: email, 
@@ -33,13 +36,13 @@ export default async function handler(req, res) {
              urlVeriToken: urlVeriToken  
              
            })
-        }    
-        res.status(200).json(user);   
-          
-          break;
-        default:
-          res.setHeader("Allow", ["POST"]);
-          res.status(405).end(`Method ${method} Not Allowed`);
-          break;
-      }
+        } 
+        res.status(200).json(user);
+    
+        break;
+        default:
+            res.setHeader("Allow", ["POST"]);
+            res.status(405).end(`Method ${method} Not Allowed`);
+        break;
+    }
 }

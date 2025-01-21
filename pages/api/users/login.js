@@ -11,9 +11,10 @@ export default async function handler(req, res) {
 
     switch (method) {
         
-        case "POST": //User login
-          const { email, password } = req.body;
-                   
+        case "POST": //User login
+        const { email, password } = req.body;
+            console.log("insinde login apii")
+            console.log("email", email)       
             let user = await db.collection("users").findOne(
                 { email: email,
                   password: md5(password)  
@@ -35,21 +36,21 @@ export default async function handler(req, res) {
                     expiresAt: new Date(+new Date() + 7 * 24 * 60 * 60 * 1000),
                     userId: user._id  
            })
-        }    
+        } 
         res.status(200).json({
             Status: "OK",
             token: token,
             userId: user._id,
             email: user.email 
             
-        });   
-          
-          break;
-        default:
-          res.setHeader("Allow", ["POST"]);
-          res.status(405).end(`Method ${method} Not Allowed`);
-          break;
-      }
+        });
+    
+        break;
+        default:
+            res.setHeader("Allow", ["POST"]);
+            res.status(405).end(`Method ${method} Not Allowed`);
+        break;
+    }
 }
 
 

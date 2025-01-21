@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/layout";
-import { signIn } from "next-auth/react";
+import { signIn, logIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import styles from "../components/layout.module.css";
 import Link from "next/link";
@@ -15,6 +15,10 @@ export default function Login({ allPostsData }) {
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log("Username-frion", username)
+    console.log("Password", password)
+    
 
     const result = await signIn("credentials", {
       username: username,
@@ -44,7 +48,7 @@ export default function Login({ allPostsData }) {
           onSubmit={handleSubmit}
           className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-white dark:bg-blue-500"
         >
-          <h1> Log In </h1>
+          <h1> Log Iww </h1>
           <label
             htmlFor="fullname"
             className="text-gray-500 font-light mt-8 dark:text-gray-50"
@@ -94,12 +98,7 @@ export default function Login({ allPostsData }) {
                   Sign up
                 </Link>
 
-               
             </p>
-
-
-              
-
 
           </div>
                    

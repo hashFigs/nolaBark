@@ -13,7 +13,7 @@ const [logintext, setLogintext] = useState('login');
 const { data: session } = useSession()
 const router= useRouter()
 
-const handleSubmit = async (e) => {
+const handleAuth = async (e) => {
     e.preventDefault();
 
     //let isValidForm = handleValidation();
@@ -88,15 +88,17 @@ return(
     
   </Navbar.Collapse>
   
+  <Button
+            onClick={handleAuth}
+            className="mr-4 text-white bg-primary hover:bg-secondary"
+          >
+            {logintext}
+          </Button>
 
   
 </Navbar>
 
     </>
-/*
-  <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
-      Wigging Tails
-    </span>
-*/
+
 )
 }

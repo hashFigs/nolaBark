@@ -1,10 +1,18 @@
 import NextAuth from 'next-auth'
 import md5 from "md5";
-import jwt from "jsonwebtoken"
-import clientPromise from "../../../lib/mongodb";
 import CredentialsProvider from 'next-auth/providers/credentials'
+import clientPromise from "../../../lib/mongodb";
+
+
+const client = await clientPromise;
+const db = client.db("nolabark");
+   
+
+
 
 export default NextAuth({
+
+
   providers: [
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
@@ -19,20 +27,14 @@ export default NextAuth({
         const {username, password} = credentials;
 
         const md5p= md5(password)
-        const res = await fetch("http://localhost:3000/api/users/login", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({
-            email: username,
-            password: password
-          })
-        })
 
-        const user = await res.json();
+        let user = await db.collection("users").findOne(
+          { email: username },
+          );
+          
 
-        if(res.ok) return {user} 
+        if(user.password == md5p) return {user}  
+
         return null
         
       }
@@ -49,7 +51,9 @@ export default NextAuth({
     session: async ({ session, token }) => {
         session.user = token.user
         return session
-    }
+    },
+    secret: process.env.NEXTAUTH_SECRET, 
+
 }
 
   
