@@ -18,7 +18,7 @@ export default function ItemCard({title, description, price, image, link}) {
                 />
 
                     <svg class="absolute bottom-0 left-0 w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill="#ffffff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                        <path fill="#ffffff" fillOpacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                     </svg> 
                     </div>
 
@@ -27,8 +27,8 @@ export default function ItemCard({title, description, price, image, link}) {
                              
                 <div class="p-4 justify-center">
                     
-                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">{ title }</h2>
-                    <p tabindex="0" class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">{ description }</p>   
+                    <h2 tabIndex="0" class="focus:outline-none text-lg dark:text-white font-semibold">{ title }</h2>
+                    <p tabIndex="0" class="text-sm text-gray-600 dark:text-gray-200 leading-6 font-normal">{ description }</p>   
                                
                 </div>
 
@@ -46,16 +46,3 @@ export default function ItemCard({title, description, price, image, link}) {
     )
 }
 
-/*
-
-            <section>
-                <div class ="content">
-                    <h2>wave shape</h2>
-                    <p>asdasdasdasdasda</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                        <path fill="#0099ff" fill-opacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                    </svg> 
-                </div>
-
-            </section>
-            */

@@ -1,6 +1,4 @@
 import Layout, { siteTitle } from "../components/layout";
-import styles from '../components/layout.module.css';
-import AboutUs from '../components/about/aboutus.js';
 import MainBanner from "../components/mainBanner";
 import LayoutImgTxt from "../components/layoutImgTxt";
 import Head from "next/head";

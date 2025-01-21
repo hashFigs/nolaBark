@@ -6,7 +6,7 @@ export default function ServiceCard({title, description, price, image}) {
     
     return(
         <>
-          <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+          <div tabIndex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
             <div>
                 <Image
                     priority
@@ -22,9 +22,9 @@ export default function ServiceCard({title, description, price, image}) {
             <div class="bg-white ">               
                 <div class="py-6">
                     <div class="flex items-center">
-                        <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">{ title }</h2>
+                        <h2 tabIndex="0" class="focus:outline-none text-lg dark:text-white font-semibold">{ title }</h2>
                     </div>
-                        <p tabindex="0" class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">{ description }</p>
+                        <p tabIndex="0" class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">{ description }</p>
                                
                     </div>
 

@@ -55,7 +55,7 @@ export default function ServicesMap(){
                 'layout': {},
                 'paint': {
                     'fill-color': '#0080ff', // blue color fill
-                    'fill-opacity': 0.5
+                    'fillOpacity': 0.5
                 }
             });
             // Add a black outline around the polygon.
