@@ -4,7 +4,6 @@ import { signIn, logIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import styles from "../components/layout.module.css";
 import Link from "next/link";
-import { set } from "date-fns";
 
 export default function Login({ allPostsData }) {
   const [username, setUsername] = useState("");
@@ -16,10 +15,7 @@ export default function Login({ allPostsData }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Username-frion", username)
-    console.log("Password", password)
     
-
     const result = await signIn("credentials", {
       username: username,
       password: password,

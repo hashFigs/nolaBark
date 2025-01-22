@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken"
 export default async function handler(req, res) {
     const { method } = req;
     const client = await clientPromise;
-    const db = client.db("nolabark");
+    const db = client.db(process.env.NEXT_DATABASE_NAME);
 
     switch (method) {
         

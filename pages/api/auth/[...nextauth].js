@@ -5,11 +5,8 @@ import clientPromise from "../../../lib/mongodb";
 
 
 const client = await clientPromise;
-const db = client.db("nolabark");
+const db = client.db(process.env.NEXT_DATABASE_NAME);
    
-
-
-
 export default NextAuth({
 
 
@@ -32,8 +29,9 @@ export default NextAuth({
           { email: username },
           );
           
-
-        if(user.password == md5p) return {user}  
+          
+          if(user.password == md5p) return {user}  
+        
 
         return null
         
@@ -45,7 +43,10 @@ export default NextAuth({
   },
   callbacks: {
     jwt: async ({ token, user }) => {
-        user && (token.user = user)
+         if (user) {
+          console.log("checking user", user)
+          token.user = { ...user, isAdmin: user.user.email === "jordi@hashbrowns.dev" }; 
+        }
         return token
     },
     session: async ({ session, token }) => {

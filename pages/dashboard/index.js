@@ -12,7 +12,7 @@ export default function Index() {
     if(!user) {
         return(
         <h1> Please log in</h1>
-        )
+        ) 
     }
     else{
         return(
