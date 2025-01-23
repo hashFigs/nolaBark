@@ -14,6 +14,8 @@ export default async function handler(req, res) {
 
     case "POST":
       const newProduct = req.body;
+
+      console.log("NewProduct", newProduct)
       const requiredFields = ["name", "price", "description"];
 
       const missingFields = requiredFields.filter(

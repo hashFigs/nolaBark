@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useSession } from 'next-auth/react';
 
-export default function ProductForm({ onSubmit, initialValues = { name: "", price: "", description: "" } }) {
+
+export default function ProductForm({ onSubmit, initialValues = { userId: "", name: "", price: "", description: "" } }) {
   const [name, setName] = useState(initialValues.name);
   const [price, setPrice] = useState(initialValues.price);
   const [description, setDescription] = useState(initialValues.description);
+  const { data: session } = useSession();
+  const userId = session?.user.user._id
+  console.log("uSERidf", userId)
 
 
   return (
@@ -54,7 +59,7 @@ export default function ProductForm({ onSubmit, initialValues = { name: "", pric
       <div className='button-horizontal-group'>
         <button  
             className="button"
-            onClick={() => onSubmit(name, price, description )} >
+            onClick={() => onSubmit(userId , name, price, description )} >
                 Add Product
         </button>
         

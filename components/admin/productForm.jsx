@@ -4,6 +4,7 @@ export default function ProductForm({ onSubmit, product = {} }) {
     const [description, setDescription] = useState(product.description || "");
   
     const handleSubmit = (e) => {
+      console.log("Thats the right!!")
       e.preventDefault();
       onSubmit({ name, price, description });
     };

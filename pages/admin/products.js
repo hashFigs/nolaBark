@@ -30,11 +30,16 @@ export default function Products() {
     }
   };
 
-  const handleAddProduct = async (name, price, description, ) => {
+  const handleAddProduct = async (userId, name, price, description, ) => {
+
+    console.log("insinde add product")
     try {
+      newProduct.userId= userId
       newProduct.name= name;
       newProduct.price=price;
       newProduct.description=description; 
+
+      console.log("newOProduct", newProduct)
 
       const { data } = await axios.post("/api/products", newProduct);
       setProducts((prev) => [...prev, data]);
@@ -66,11 +71,14 @@ export default function Products() {
     console.log("insindehandle - updated product", updatedProduct )
 
     try {
+      setLoading(true); 
       const { data } = await axios.put(`/api/products?productId=${productId}`, updatedProduct);
-      console.log("return", data)
-      setProducts((prev) =>
-        prev.map((product) => (product._id === productId ? data : product))
+      setProducts((prevProducts) =>
+        prevProducts.map((product) =>
+          product._id === productId ? { ...updatedProduct, ...data } : updatedProduct
+        )
       );
+      setLoading(false); 
     } catch (error) {
       console.error("Error updating product:", error);
     }
