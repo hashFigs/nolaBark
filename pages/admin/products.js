@@ -2,9 +2,8 @@ import AdminLayout from "../../components/admin/adminLayout";
 import { useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import ProductForm from '../../components/admin/product/productAddForm'
+import ProductForm from "../../components/admin/product/productAddForm";
 import ProductsList from "../../components/admin/product/productslist";
-
 
 export default function Products() {
   const { data: session, status } = useSession();
@@ -13,6 +12,7 @@ export default function Products() {
   const [showForm, setShowForm] = useState(false);
   const [newProduct, setNewProduct] = useState({ name: "", price: "", description: "" });
 
+  // Fetch products on component mount or if session changes
   useEffect(() => {
     if (status === "authenticated") {
       fetchProducts();
@@ -21,7 +21,11 @@ export default function Products() {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get("/api/products");
+
+      const userId = session?.user?.user?._id;
+      console.log("before") 
+      const { data } = await axios.get(`/api/products?userId=${userId}`);
+      console.log("after data")
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -30,62 +34,41 @@ export default function Products() {
     }
   };
 
-  const handleAddProduct = async (userId, name, price, description, ) => {
-
-    console.log("insinde add product")
+  const handleAddProduct = async (userId, name, price, description) => {
     try {
-      newProduct.userId= userId
-      newProduct.name= name;
-      newProduct.price=price;
-      newProduct.description=description; 
-
-      console.log("newOProduct", newProduct)
-
+      const newProduct = { userId, name, price, description };
       const { data } = await axios.post("/api/products", newProduct);
       setProducts((prev) => [...prev, data]);
-      setShowForm(false);
+      setShowForm(false); 
       setNewProduct({ name: "", price: "", description: "" });
     } catch (error) {
       console.error("Error adding product:", error);
     }
   };
 
-  const handleDeleteProduct = async (productId ) => {
+  const handleDeleteProduct = async (productId) => {
     try {
-      
-    const { data } = await axios.delete(`/api/products?productId=${productId}`);
-      console.log(data)
+      await axios.delete(`/api/products?productId=${productId}`);
       setProducts((prev) => prev.filter((product) => product._id !== productId));
-
-      setShowForm(false);    
-      
     } catch (error) {
       console.error("Error deleting product:", error);
     }
   };
 
-
   const handleUpdateProduct = async (productId, updatedProduct) => {
-
-    console.log("insindehandle - product", productId )
-    console.log("insindehandle - updated product", updatedProduct )
-
     try {
-      setLoading(true); 
       const { data } = await axios.put(`/api/products?productId=${productId}`, updatedProduct);
       setProducts((prevProducts) =>
         prevProducts.map((product) =>
-          product._id === productId ? { ...updatedProduct, ...data } : updatedProduct
+          product._id === productId ? { ...product, ...data } : product
         )
       );
-      setLoading(false); 
     } catch (error) {
       console.error("Error updating product:", error);
     }
   };
 
-
-
+  // Handle loading and admin access checks
   if (status === "loading") {
     return <p>Loading...</p>;
   }
@@ -96,36 +79,42 @@ export default function Products() {
 
   return (
     <AdminLayout>
-      
-      <h1>Manage Products</h1>
-      {loading ? (
-        <p>Loading products...</p>
-      ) : products.length === 0 ? (
-        <div className="text-gray-dark">
-          <p>No products available. Add the first product:</p>
-          {showForm ? (
-             <ProductForm
-             onSubmit={handleAddProduct}
-             initialValues={newProduct}
-           />
-          ) : (
-            <button 
-              className="button-standard"
-              onClick={() => setShowForm(true)}>Create Product
-            </button>
-          )}
-        </div>
-      ) : (
-       <>
-        
-          <ProductsList
-            products ={ products }
-            handleDeleteProduct ={handleDeleteProduct }
-            handleUpdateProduct={handleUpdateProduct}  >
+      <div className="relative">
+        {/* Add Product Button */}
+        <button
+          className="absolute top-0 right-0 px-4 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600"
+          onClick={() => setShowForm(true)}
+        >
+          Add Product
+        </button>
 
-          </ProductsList>
-        </>
-      )}
+        <h1 className="text-2xl font-bold mb-6 text-gray-800">Manage Products</h1>
+
+        {/* Show Add Form */}
+        {showForm && (
+          <div className="mb-6 p-6 bg-white shadow-lg rounded-lg">
+            <h2 className="text-xl font-bold mb-4">Add New Product</h2>
+            <ProductForm
+              onSubmit={handleAddProduct}
+              initialValues={newProduct}
+              onCancel={() => setShowForm(false)}
+            />
+          </div>
+        )}
+
+        {/* Products List */}
+        {loading ? (
+          <p>Loading products...</p>
+        ) : products.length === 0 ? (
+          <p>No products available. Add the first product above.</p>
+        ) : (
+          <ProductsList
+            products={products}
+            handleDeleteProduct={handleDeleteProduct}
+            handleUpdateProduct={handleUpdateProduct}
+          />
+        )}
+      </div>
     </AdminLayout>
   );
 }

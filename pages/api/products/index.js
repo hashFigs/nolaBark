@@ -8,14 +8,34 @@ export default async function handler(req, res) {
 
   switch (req.method) {
     case "GET":
-      const products = await db.collection("products").find().toArray();
-      res.json(products);
+
+    console.log("HOLLAAA")
+
+      try {
+        const { userId } = req.query; 
+
+    
+        if (!userId) {
+          return res.status(400).json({ error: "userId is required" });
+        }
+        console.log("USERid", userId)
+        const products = await db
+          .collection("products")
+          .find({ userId: userId },) 
+          .toArray();
+
+          console.log("PROODUCTS", products)
+    
+        res.status(200).json(products); 
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        res.status(500).json({ error: "Failed to fetch products" });
+      }
       break;
 
     case "POST":
       const newProduct = req.body;
 
-      console.log("NewProduct", newProduct)
       const requiredFields = ["name", "price", "description"];
 
       const missingFields = requiredFields.filter(

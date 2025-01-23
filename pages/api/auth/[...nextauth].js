@@ -44,7 +44,6 @@ export default NextAuth({
   callbacks: {
     jwt: async ({ token, user }) => {
          if (user) {
-          console.log("checking user", user)
           token.user = { ...user, isAdmin: user.user.email === "jordi@hashbrowns.dev" }; 
         }
         return token
