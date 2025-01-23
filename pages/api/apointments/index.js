@@ -8,24 +8,21 @@ export default async function handler(req, res) {
 
   switch (req.method) {
     case "GET":
-
       try {
         const { userId } = req.query; 
-
     
         if (!userId) {
           return res.status(400).json({ error: "userId is required" });
         }
-        const products = await db
-          .collection("products")
+        const appointments = await db
+          .collection("appointments")
           .find({ userId: userId },) 
           .toArray();
 
-    
-        res.status(200).json(products); 
+        res.status(200).json(appointments); 
       } catch (error) {
-        console.error("Error fetching products:", error);
-        res.status(500).json({ error: "Failed to fetch products" });
+        console.error("Error fetching appointments:", error);
+        res.status(500).json({ error: "Failed to fetch appointments" });
       }
       break;
 
@@ -43,24 +40,24 @@ export default async function handler(req, res) {
           error: `Missing required fields: ${missingFields.join(", ")}`,
         });
       }
-      const result = await db.collection("products").insertOne(newProduct);
+      const result = await db.collection("appointments").insertOne(newProduct);
       res.status(201).json(result);
       break;
 
     case "PUT":
       const { ...updates } = req.body;
-      const response = await db.collection("products").updateOne(
+      const response = await db.collection("appointments").updateOne(
         { _id: new ObjectId(productId) },
         { $set: updates }
       );    
-      res.status(200).send("Product updated");
+      res.status(200).send("Appointments updated");
       break;
 
     case "DELETE":
       
-      const ret = await db.collection("products").deleteOne({ _id:  new ObjectId(productId) });
+      const ret = await db.collection("appointments").deleteOne({ _id:  new ObjectId(productId) });
      
-      res.status(200).send("Product deleted");
+      res.status(200).send("Appointments deleted");
       break;
 
     default:
