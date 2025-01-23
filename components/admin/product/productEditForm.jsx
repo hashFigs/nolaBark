@@ -5,7 +5,6 @@ export default function ProductsList({ products, handleDeleteProduct, handleUpda
   const [editValues, setEditValues] = useState({ name: "", price: "", description: "" });
 
   const startEditing = (product) => {
-    console.log("start editing", product)
     setEditingProductId(product._id);
     setEditValues({
       name: product.name,
@@ -20,9 +19,6 @@ export default function ProductsList({ products, handleDeleteProduct, handleUpda
   };
 
   const saveChanges = () => {
-
-    console.log("product_id", editingProductId)
-    console.log("editValues", editValues)
     handleUpdateProduct(editingProductId, editValues);
     setEditingProductId(null); // Exit editing mode
   };
@@ -39,14 +35,12 @@ export default function ProductsList({ products, handleDeleteProduct, handleUpda
           className="bg-white rounded-lg shadow-lg p-6 dark:bg-blue-500"
         >
           {editingProductId === product._id ? (
-            // Edit Mode
             <>
               <input
                 type="text"
                 name="name"
                 value={editValues.name}
                 onChange={handleEditChange}
-                placeholder="Product Name"
                 className="w-full mb-2 p-2 border rounded"
               />
               <input
@@ -54,14 +48,12 @@ export default function ProductsList({ products, handleDeleteProduct, handleUpda
                 name="price"
                 value={editValues.price}
                 onChange={handleEditChange}
-                placeholder="Product Price"
                 className="w-full mb-2 p-2 border rounded"
               />
               <textarea
                 name="description"
                 value={editValues.description}
                 onChange={handleEditChange}
-                placeholder="Product Description"
                 className="w-full mb-2 p-2 border rounded"
               ></textarea>
               <div className="mt-4 flex justify-end space-x-2">
@@ -80,7 +72,6 @@ export default function ProductsList({ products, handleDeleteProduct, handleUpda
               </div>
             </>
           ) : (
-            // View Mode
             <>
               <h2 className="text-lg font-bold text-gray-800 dark:text-gray-50">
                 {product.name}
@@ -89,7 +80,7 @@ export default function ProductsList({ products, handleDeleteProduct, handleUpda
                 Price: ${product.price}
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Description: {product.description}
+                Product description: {product.description}
               </p>
               <div className="button-horizontal-group mt-4 flex justify-end space-x-2">
                 <button
